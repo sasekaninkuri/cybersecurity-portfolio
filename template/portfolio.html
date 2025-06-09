@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sasekani Maluleke | Cybersecurity Portfolio</title>
+  <link rel="stylesheet" href="/static/portfolio.css" />
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body class="dark-mode">
+  <header>
+    <div class="container">
+      <img src="/WhatsApp Image 2024-04-23 at 12.38.14.jpeg" alt="Headshot" class="w-16 h-16 rounded-full object-cover">
+      <h1>Sasekani Maluleke</h1>
+      <p>Cybersecurity Analyst | Web App Security | Incident Response |Penetration tester| Full Stack Developer</p>
+    </div>
+    <nav>
+      <a href="#certifications">Certifications</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
+      <a href="#cv">CV</a>
+      <!-- <button id="theme-toggle">Toggle Theme</button> -->
+
+    </nav>
+  </header>
+
+  <main class="container">
+    <section id="certifications">
+      <h2>Certifications</h2>
+      <ul>
+        <li>CCST Cybersecurity – Cisco</li>
+        <li>Qualys VMDR</li>
+        <li>Qualys PM</li>
+        <li>Qualys CSAM</li>
+        <li>Qualys RSBP</li>
+        <li>Qualys CA</li>
+        <li>Qualys ETM</li>
+        <li>Qualys SSBP</li>
+      </ul>
+    </section>
+
+    <section id="education">
+        <h2>Education</h2>
+        <ul>
+          <li>IT System Support – NQF Level 5</li>
+          <li>Generic Management – NQF Level 5</li>
+        </ul>
+      </section>
+      
+
+    <section id="projects">
+      <h2>Cybersecurity Projects</h2>
+
+      <div>
+        <h3>SecureLink Analyzer</h3>
+        <p>Python (Flask), HTML, CSS, JavaScript</p>
+        <p>An end-to-end cybersecurity tool for URL analysis and phishing detection.</p>
+        <a href="https://securevault-password-leak-checker.onrender.com/">View live</a>
+      </div>
+
+      <div>
+        <h3>Phishing Email Detection Tool</h3>
+        <p>Python, Flask, JavaScript</p>
+        <p>Detects phishing emails using header, body, and URL analysis.</p>
+        <a href="https://github.com/yourrepo/phishing-detector">View on GitHub</a>
+      </div>
+      <div>
+        <h3>Mini-SIEM - Security Event Tracker</h3>
+        <p>Python, Flask</p>
+        <p>Collects and visualizes logs for security event monitoring.</p>
+        <a href="https://github.com/yourrepo/mini-siem">View on GitHub</a>
+      </div>
+
+      <!-- New Full Stack Projects Section -->
+      <h2 class="mt-8">Full Stack Projects</h2>
+      <div>
+        <h3>OHS Specialist Platform</h3>
+        <p>HTML, JavaScript, TypeScript, CSS</p>
+        <p>A platform for occupational health and safety with WhatsApp integration and real-time messaging features.</p>
+        <a href="https://www.hulahulaohs.co.za/">View live</a>
+      </div>
+      
+      <div>
+        <h3>Recipe keeper</h3>
+        <p>Python (Flask), HTML,  CSS, JavaScript</p>
+        <p>An end-to-end WebApp.</p>
+        <a href="https://recipe-keeper-brem.onrender.com/">View live</a>
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2>Skills</h2>
+      <div class="skill-bar"><span>Python</span><div class="bar" style="width: 90%"></div></div>
+      <div class="skill-bar"><span>Flask</span><div class="bar" style="width: 85%"></div></div>
+      <div class="skill-bar"><span>JavaScript</span><div class="bar" style="width: 80%"></div></div>
+      <div class="skill-bar"><span>HTML/CSS</span><div class="bar" style="width: 95%"></div></div>
+      <div class="skill-bar"><span>Node.js</span><div class="bar" style="width: 70%"></div></div>
+      <div class="skill-bar"><span>Wireshark</span><div class="bar" style="width: 80%"></div></div>
+      <div class="skill-bar"><span>Python</span><div class="bar" style="width: 75%"></div></div>
+      <div class="skill-bar"><span>Nmap</span><div class="bar" style="width: 85%"></div></div>
+    </section>
+
+    <section id="experience">
+      <h2>Experience</h2>
+      <div>
+        <h3>Junior Cybersecurity Analyst @ Shaper</h3>
+        <p>Oct 2024 – Present</p>
+        <ul>
+          <li>Monitor vulnerabilities and implement mitigation plans</li>
+          <li>Support incident response and malware investigations</li>
+          <li>Enhance web application security and perform analysis</li>
+        </ul>
+      </div>
+
+      <!-- New Full Stack Developer Experience -->
+      <div class="mt-6">
+        <h3>Full Stack Developer @ Shaper</h3>
+        <p>October 2023 – September 2024</p>
+        <ul>
+          <li>Developed web applications using HTML, CSS, JavaScript, and Python Flask</li>
+          <li>Built real-time messaging and data visualization features</li>
+          <li>Worked on front-end and back-end integration for secure and scalable apps</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact Me</h2>
+      <form action="your_backend_endpoint" method="POST">
+        <input type="text" name="name" placeholder="Name" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <textarea name="message" placeholder="Your message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+
+    <section id="cv">
+      <h2>Download CV</h2>
+      <a href="your-cv.pdf">Download PDF</a>
+    </section>
+  </main>
+
+  <script>
+    document.getElementById("theme-toggle").addEventListener("click", function () {
+      document.body.classList.toggle("dark-theme");
+    });
+  </script>
+  
+
+  <footer>
+    <p>Connect with me:</p>
+    <a href="https://www.linkedin.com/in/sasekani-maluleke-026736165/">LinkedIn</a>
+    <a href="https://github.com/sasekaninkuri">GitHub</a>
+    <p>Open to opportunities in threat detection, vulnerability management, and incident response.</p>
+  </footer>
+</body>
+</html>
+
+
