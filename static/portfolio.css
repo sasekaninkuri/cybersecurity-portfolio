@@ -1,44 +1,54 @@
-/* Reset */
-* {
+:root {
+    --bg-dark: #0a0f1b;
+    --bg-card: #121826;
+    --text-light: #fdf1f7;
+    --accent-pink: #ff69b4;
+    --accent-light: #ffb6c1;
+    --border-color: #2a2e39;
+  }
+  
+  /* Reset and Base */
+  * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Fira Code', monospace;
   }
   
-  /* Base Colors */
   body {
-    background-color: #0d1117; /* Dark background */
-    color: #c9d1d9; /* Light text */
+    background-color: var(--bg-dark);
+    color: var(--text-light);
     line-height: 1.6;
     padding: 1rem;
   }
   
   /* Links */
   a {
-    color: #00ffcc;
+    color: var(--accent-pink);
     text-decoration: none;
     transition: color 0.3s ease;
   }
   a:hover {
-    color: #ff5c57;
+    color: var(--accent-light);
   }
   
   /* Header */
   header {
-    background-color: #161b22;
+    background-color: var(--bg-card);
     padding: 1.5rem 1rem;
-    border-bottom: 1px solid #30363d;
+    border-bottom: 1px solid var(--border-color);
     position: sticky;
     top: 0;
     z-index: 10;
   }
   header h1 {
-    font-size: 2rem;
-    color: #00ffcc;
+    font-size: 2.2rem;
+    color: var(--accent-pink);
+    text-shadow: 0 0 6px var(--accent-pink);
   }
   header p {
-    color: #8b949e;
+    color: #d8a5b5;
+    font-style: italic;
   }
   
   /* Navigation */
@@ -51,15 +61,15 @@
   }
   nav a {
     background: transparent;
-    color: #00ffcc;
+    color: var(--accent-pink);
     padding: 0.5rem 1rem;
-    border: 1px solid #00ffcc;
+    border: 1px solid var(--accent-pink);
     border-radius: 5px;
     transition: all 0.3s ease;
   }
   nav a:hover {
-    background-color: #00ffcc;
-    color: #0d1117;
+    background-color: var(--accent-pink);
+    color: var(--bg-dark);
   }
   
   /* Main Container */
@@ -72,19 +82,20 @@
   /* Sections */
   section {
     margin-bottom: 2rem;
-    background-color: #161b22;
+    background-color: var(--bg-card);
     padding: 1.5rem;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 255, 204, 0.1);
-    border: 1px solid #30363d;
+    box-shadow: 0 0 15px rgba(255, 105, 180, 0.15);
+    border: 1px solid var(--border-color);
   }
   section h2 {
-    color: #00ffcc;
+    color: var(--accent-pink);
     font-size: 1.8rem;
     margin-bottom: 1rem;
+    text-shadow: 0 0 4px var(--accent-pink);
   }
   section h3 {
-    color: #58a6ff;
+    color: var(--accent-light);
     font-size: 1.3rem;
     margin-bottom: 0.5rem;
   }
@@ -96,11 +107,11 @@
     gap: 0.75rem;
   }
   .skills-grid span {
-    background-color: #0d1117;
-    color: #00ffcc;
+    background-color: var(--bg-dark);
+    color: var(--accent-pink);
     padding: 0.5rem;
     text-align: center;
-    border: 1px solid #00ffcc;
+    border: 1px solid var(--accent-pink);
     border-radius: 5px;
   }
   
@@ -111,24 +122,26 @@
     gap: 1rem;
   }
   input, textarea {
-    background-color: #0d1117;
-    color: #c9d1d9;
-    border: 1px solid #00ffcc;
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    border: 1px solid var(--accent-pink);
     border-radius: 5px;
     padding: 0.75rem;
   }
-  button[type="submit"] {
-    background-color: #00ffcc;
-    color: #0d1117;
+  button[type="submit"],
+  .btn-submit {
+    background-color: var(--accent-pink);
+    color: var(--bg-dark);
     font-weight: bold;
-    padding: 0.75rem;
+    padding: 0.75rem 1.5rem;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
   }
-  button[type="submit"]:hover {
-    background-color: #ff5c57;
-    color: white;
+  button[type="submit"]:hover,
+  .btn-submit:hover {
+    background-color: var(--accent-light);
   }
   
   /* Footer */
@@ -136,28 +149,76 @@
     text-align: center;
     padding: 2rem 1rem;
     font-size: 0.9rem;
-    background-color: #161b22;
-    border-top: 1px solid #30363d;
+    background-color: var(--bg-card);
+    border-top: 1px solid var(--border-color);
   }
   footer p {
-    color: #8b949e;
+    color: #d8a5b5;
   }
   footer a {
     margin: 0 0.5rem;
-    color: #00ffcc;
+    color: var(--accent-pink);
   }
   footer a:hover {
-    color: #ff5c57;
+    color: var(--accent-light);
   }
-
+  
+  /* Profile Image */
   img {
-    width: 10rem; /* 16 * 0.25rem = 4rem */
-    height: 10rem; /* 16 * 0.25rem = 4rem */
-    border-radius: 100%; /* Makes the image circular */
-    object-fit: cover; /* Ensures the image covers the area without distortion */
-    display: block; /* Ensures proper spacing and alignment */
-    margin: 0 auto; /* Centers the image */
-}
+    width: 10rem;
+    height: 10rem;
+    border-radius: 100%;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+    box-shadow: 0 0 10px rgba(255, 105, 180, 0.3);
+  }
+  
+  /* Contact Section */
+  #contact {
+    padding: 3rem 1rem;
+    box-shadow: 0 0 10px rgba(255, 105, 180, 0.1);
+    border-top: 2px solid var(--border-color);
+  }
+  #contact h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    color: var(--accent-pink);
+    text-shadow: 0 0 4px var(--accent-pink);
+  }
+  .contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .form-group {
+    display: flex;
+    flex-direction: column;
+  }
+  label {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--accent-light);
+  }
+  input[type="email"],
+  textarea {
+    padding: 0.8rem 1rem;
+    font-size: 1rem;
+    border: 1px solid var(--accent-light);
+    border-radius: 0.5rem;
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    transition: all 0.3s ease;
+  }
+  input[type="email"]:focus,
+  textarea:focus {
+    border-color: var(--accent-pink);
+    box-shadow: 0 0 10px rgba(255, 105, 180, 0.3);
+    outline: none;
+  }
   
 
   

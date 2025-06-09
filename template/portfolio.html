@@ -1,19 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sasekani Maluleke | Cybersecurity Portfolio</title>
   <link rel="stylesheet" href="/static/portfolio.css" />
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    /* Flip Card Styles */
+    .flip-card {
+      background-color:#743573 ;
+      width: 400px;
+      height: 150px;
+      perspective: 1000px;
+      margin: 10px;
+      
+    }
+
+    .flip-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      transition: transform 0.8s;
+      transform-style: preserve-3d;
+    }
+
+    .flip-card:hover .flip-card-inner {
+      transform: rotateY(180deg);
+    }
+
+    .flip-card-front,
+    .flip-card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid #cccccc;
+      border-radius: 8px;
+    }
+
+    .flip-card-back {
+      transform: rotateY(180deg);
+      
+    }
+
+    /* Terminal Welcome */
+    .terminal-welcome {
+      background: #000;
+      color: rgb(242, 246, 242);
+      font-family: 'Courier New', Courier, monospace;
+      padding: 10px;
+      animation: blinkCursor 1s step-end infinite;
+    }
+
+    @keyframes blinkCursor {
+      50% {
+        border-right: 2px solid #9d4a8d;
+      }
+    }
+
+    /* Timeline Styles */
+    .timeline {
+      border-left: 3px solid #a74f9a;
+      padding-left: 20px;
+      margin: 20px 0;
+    }
+
+    .timeline-item {
+      position: relative;
+      margin: 20px 0;
+      padding-left: 10px;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -11px;
+      top: 5px;
+      width: 10px;
+      height: 10px;
+      background: #f0f3f4;
+      border-radius: 50%;
+    }
+
+    /* Dark mode styles */
+    body.dark-mode {
+      background-color: #121212;
+      
+    }
+
+    .skill-bar {
+      margin: 10px 0;
+    }
+
+    .bar {
+      height: 10px;
+      background-color: #652d67;
+      border-radius: 5px;
+    }
+  </style>
 </head>
+
 <body class="dark-mode">
+
+  <!-- Terminal Welcome -->
+  <div class="terminal-welcome">
+    <p>> Welcome, Sasekani Maluleke. Initializing cybersecurity portfolio...</p>
+  </div>
+
   <header>
     <div class="container">
       <img src="/WhatsApp Image 2024-04-23 at 12.38.14.jpeg" alt="Headshot" class="w-16 h-16 rounded-full object-cover">
       <h1>Sasekani Maluleke</h1>
-      <p>Cybersecurity Analyst | Web App Security | Incident Response |Penetration tester| Full Stack Developer</p>
+      <p>Cybersecurity Analyst | Web App Security | Incident Response | Penetration Tester | Full Stack Developer</p>
+     
     </div>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p>I'm Sasekani Maluleke, a beginner cybersecurity analyst with a passion for web security. I hold a CCST certification and have a background in full-stack development, which helps me identify vulnerabilities.</p>
+        <p>I’m eager to learn and grow in the field, and I enjoy exploring new cybersecurity trends and contributing to projects.</p>
+      </section>
     <nav>
       <a href="#certifications">Certifications</a>
       <a href="#projects">Projects</a>
@@ -21,43 +134,66 @@
       <a href="#experience">Experience</a>
       <a href="#contact">Contact</a>
       <a href="#cv">CV</a>
-      <!-- <button id="theme-toggle">Toggle Theme</button> -->
-
     </nav>
   </header>
+
+  <section class="intro-banner">
+    <div class="container">
+      <h2>Cybersecurity Focused | Passionate About Web Security and Risk Mitigation</h2>
+      <p>I help organizations secure digital assets by analyzing threats, detecting vulnerabilities, and responding to incidents. Currently open to roles in Cybersecurity Analysis, Threat Hunting, and App Security Testing.</p>
+    </div>
+  </section>
 
   <main class="container">
     <section id="certifications">
       <h2>Certifications</h2>
       <ul>
-        <li>CCST Cybersecurity – Cisco</li>
-        <li>Qualys VMDR</li>
-        <li>Qualys PM</li>
-        <li>Qualys CSAM</li>
-        <li>Qualys RSBP</li>
-        <li>Qualys CA</li>
-        <li>Qualys ETM</li>
-        <li>Qualys SSBP</li>
+        <li><i class="fas fa-shield-alt" title="Security Certification"></i> CCST Cybersecurity – Cisco</li>
+        <li><i class="fas fa-shield-alt" title="Security Certification"></i> Qualys Vulnerability Management Detection and Response Certification (VMDR)</li>
+        <li><i class="fas fa-shield-alt" title="Security Certification"></i> Qualys Patch Management (PM)</li>
+        <li><i class="fas fa-shield-alt" title="Security Certification"></i> Qualys CyberSecurity Asset Management (CSAM)</li>
+        <li><i class="fas fa-shield-alt" title="Security Certification"></i> Qualys Reporting Strategies and Best Practices (RSBP)</li>
+        <li><i class="fas fa-shield-alt" title="Security Certification"></i> Qualys Cloud Agent (CA)</li>
+        <li><i class="fas fa-shield-alt" title="Security Certification"></i> Qualys Enterprise TruRisk™ Management (ETM)</li>
+        <li><i class="fas fa-shield-alt" title="Security Certification"></i> Qualys Scanning Strategies and Best Practices (SSBP)</li>
+      </ul>
+      <div class="cert-logos">
+        <img src="/static/cisco logo.png" alt="Cisco" style="height: 100px;">
+        <img src="/static/Qualys-Logo.wine.png" alt="Qualys" style="height: 100px;">
+      </div>
+    </section>
+
+    <section id="achievements">
+      <h2>Key Achievements</h2>
+      <ul>
+        <li>🔒 Detected and reported 20+ vulnerabilities in internal web applications at Shaper.</li>
+        <li>⚙️ Built and deployed 5 full-stack applications with security-first principles.</li>
+        <li>🏆 Completed 20+ cybersecurity certifications in under a year.</li>
       </ul>
     </section>
 
     <section id="education">
-        <h2>Education</h2>
-        <ul>
-          <li>IT System Support – NQF Level 5</li>
-          <li>Generic Management – NQF Level 5</li>
-        </ul>
-      </section>
-      
+      <h2>Education</h2>
+      <ul>
+        <li>IT System Support – NQF Level 5</li>
+        <li>Generic Management – NQF Level 5</li>
+      </ul>
+    </section>
 
     <section id="projects">
       <h2>Cybersecurity Projects</h2>
 
-      <div>
-        <h3>SecureLink Analyzer</h3>
-        <p>Python (Flask), HTML, CSS, JavaScript</p>
-        <p>An end-to-end cybersecurity tool for URL analysis and phishing detection.</p>
-        <a href="https://securevault-password-leak-checker.onrender.com/">View live</a>
+      <!-- Flip Card Example -->
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <h3>SecureLink Analyzer</h3>
+          </div>
+          <div class="flip-card-back">
+            <p>End-to-end cybersecurity tool for phishing detection.</p>
+            <a href="https://securevault-password-leak-checker.onrender.com/">View live</a>
+          </div>
+        </div>
       </div>
 
       <div>
@@ -66,6 +202,7 @@
         <p>Detects phishing emails using header, body, and URL analysis.</p>
         <a href="https://github.com/yourrepo/phishing-detector">View on GitHub</a>
       </div>
+
       <div>
         <h3>Mini-SIEM - Security Event Tracker</h3>
         <p>Python, Flask</p>
@@ -73,21 +210,22 @@
         <a href="https://github.com/yourrepo/mini-siem">View on GitHub</a>
       </div>
 
-      <!-- New Full Stack Projects Section -->
       <h2 class="mt-8">Full Stack Projects</h2>
+
       <div>
         <h3>OHS Specialist Platform</h3>
         <p>HTML, JavaScript, TypeScript, CSS</p>
         <p>A platform for occupational health and safety with WhatsApp integration and real-time messaging features.</p>
         <a href="https://www.hulahulaohs.co.za/">View live</a>
       </div>
-      
+
       <div>
-        <h3>Recipe keeper</h3>
-        <p>Python (Flask), HTML,  CSS, JavaScript</p>
+        <h3>Recipe Keeper</h3>
+        <p>Python (Flask), HTML, CSS, JavaScript</p>
         <p>An end-to-end WebApp.</p>
         <a href="https://recipe-keeper-brem.onrender.com/">View live</a>
       </div>
+
     </section>
 
     <section id="skills">
@@ -98,8 +236,37 @@
       <div class="skill-bar"><span>HTML/CSS</span><div class="bar" style="width: 95%"></div></div>
       <div class="skill-bar"><span>Node.js</span><div class="bar" style="width: 70%"></div></div>
       <div class="skill-bar"><span>Wireshark</span><div class="bar" style="width: 80%"></div></div>
-      <div class="skill-bar"><span>Python</span><div class="bar" style="width: 75%"></div></div>
       <div class="skill-bar"><span>Nmap</span><div class="bar" style="width: 85%"></div></div>
+
+      <h3 class="mt-6">Tools & Platforms</h3>
+      <ul class="tools-list">
+        <li>Nmap</li>
+        <li>Wireshark</li>
+        <li>Burp Suite</li>
+        <li>Qualys VMDR</li>
+        <li>Metasploit</li>
+        <li>Virus Total</li>
+        <li>Hacker101</li>
+        <li>Formspree (for contact handling)</li>
+      </ul>
+
+      <h2>Skill Chart</h2>
+      <canvas id="skillChart" width="400" height="200"></canvas>
+
+      <section id="labs">
+        <h2>Hands-on Lab Platforms</h2>
+        <ul class="lab-list">
+          <li><strong>CyberDefenders</strong> – Practical exercises, incident response, and malware analysis.</li>
+          <li><strong>LetsDefend</strong> – Endpoint Forensics , network forencics.</li>
+          <li><strong>TryHackMe</strong> – penetration testing, web exploitation, and phishing attacks.</li>
+        </ul>
+        <p>Check out my profiles: 
+          <a href="https://tryhackme.com/p/Sasekani" target="_blank" rel="noopener noreferrer">TryHackMe</a> | 
+          <a href="https://app.letsdefend.io/my-profile/details" target="_blank" rel="noopener noreferrer">LetsDefend</a> | 
+          <a href="https://cyberdefenders.org/p/sasekaninkuri560#/challenges" target="_blank" rel="noopener noreferrer">CyberDefenders</a>
+        </p>
+      </section>
+      
     </section>
 
     <section id="experience">
@@ -114,7 +281,6 @@
         </ul>
       </div>
 
-      <!-- New Full Stack Developer Experience -->
       <div class="mt-6">
         <h3>Full Stack Developer @ Shaper</h3>
         <p>October 2023 – September 2024</p>
@@ -126,15 +292,43 @@
       </div>
     </section>
 
-    <section id="contact">
-      <h2>Contact Me</h2>
-      <form action="your_backend_endpoint" method="POST">
-        <input type="text" name="name" placeholder="Name" required>
-        <input type="email" name="email" placeholder="Email" required>
-        <textarea name="message" placeholder="Your message" required></textarea>
-        <button type="submit">Send Message</button>
-      </form>
+    <section id="timeline">
+      <h2>Career Timeline</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <span>2023</span> Full Stack Developer @ Shaper
+        </div>
+        <div class="timeline-item">
+          <span>2024</span> Junior Cybersecurity Analyst @ Shaper
+        </div>
+      </div>
     </section>
+
+    <section id="testimonials">
+      <h2>Endorsements</h2>
+      <blockquote>
+    Sasekani has shown remarkable skill in identifying and mitigating security risks. A real asset to our team.
+        <footer>— Junior Cybersecurity Analyst, Shaper</footer>
+      </blockquote>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <form action="https://formspree.io/f/xnnayvzv" method="POST" class="contact-form">
+          <div class="form-group">
+            <label for="email">Your Email</label>
+            <input type="email" id="email" name="email" required placeholder="you@example.com" />
+          </div>
+      
+          <div class="form-group">
+            <label for="message">Your Message</label>
+            <textarea id="message" name="message" rows="5" required placeholder="Type your message here..."></textarea>
+          </div>
+      
+          <button type="submit" class="btn-submit">Send Message</button>
+        </form>
+      </section>
+      
 
     <section id="cv">
       <h2>Download CV</h2>
@@ -143,11 +337,29 @@
   </main>
 
   <script>
-    document.getElementById("theme-toggle").addEventListener("click", function () {
-      document.body.classList.toggle("dark-theme");
+    document.getElementById("theme-toggle")?.addEventListener("click", function () {
+      document.body.classList.toggle("dark-mode");
+    });
+
+    const ctx = document.getElementById('skillChart').getContext('2d');
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['Python', 'Flask', 'JS', 'HTML/CSS', 'Nmap'],
+        datasets: [{
+          label: 'Skill Level',
+          data: [90, 85, 80, 95, 85],
+          
+        }]
+      },
+      options: {
+        responsive: true,
+        scales: {
+          y: { beginAtZero: true }
+        }
+      }
     });
   </script>
-  
 
   <footer>
     <p>Connect with me:</p>
@@ -156,6 +368,9 @@
     <p>Open to opportunities in threat detection, vulnerability management, and incident response.</p>
   </footer>
 </body>
+
 </html>
+
+
 
 
