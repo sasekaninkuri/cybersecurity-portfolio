@@ -8,13 +8,15 @@
   <link rel="stylesheet" href="/static/portfolio.css">
 
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+
   <script src="https://unpkg.com/scrollreveal"></script>
 </head>
 
 <body class="bg-gray-900 text-gray-100 font-sans">
-  <!-- Scroll Progress Bar -->
   <div id="progressBar" class="fixed top-0 left-0 h-1 bg-purple-500 z-50" style="width: 0%;"></div>
 
   <header class="bg-gray-800 p-6 shadow-md">
@@ -27,237 +29,28 @@
           <span id="typed"></span>
         </p>
       </div>
-      <!-- Dark Mode Toggle -->
-      <!-- <button id="theme-toggle"
-        class="ml-auto px-4 py-2 rounded bg-purple-500 hover:bg-purple-600 text-sm">Toggle Theme</button>
-    </div> -->
-    <nav class="mt-4 text-center space-x-4 text-purple-300">
-      <a href="#certifications" class="hover:underline">Certifications</a>
-      <a href="#projects" class="hover:underline">Projects</a>
-      <a href="#skills" class="hover:underline">Skills</a>
+      <nav class="mt-4 text-center space-x-4 text-purple-300">
+      <a href="#about" class="hover:underline">About</a>
       <a href="#experience" class="hover:underline">Experience</a>
       <a href="#education" class="hover:underline">Education</a>
-      <!-- <a href="#awards" class="hover:underline">Awards</a> -->
+      <a href="#certifications" class="hover:underline">Certifications</a>
+      <a href="#skills" class="hover:underline">Skills</a>
       <a href="#tools" class="hover:underline">Tools</a>
+      <a href="#projects" class="hover:underline">Projects</a>
+      <a href="#hands-on-training" class="hover:underline">Training</a>
+      <a href="#awards" class="hover:underline">Awards</a>
       <a href="#contact" class="hover:underline">Contact</a>
       <a href="#cv" class="hover:underline">CV</a>
     </nav>
   </header>
 
   <main class="max-w-6xl mx-auto px-4 py-8 space-y-16">
-    <section class="mb-10">
+    <section id="about" class="mb-10">
       <h2 class="text-2xl font-semibold text-purple-400 mb-2">About Me</h2>
       <p class="mb-2">I'm Sasekani Maluleke, a junior cybersecurity analyst with a passion for web security. I hold a
         CCST certification and have a background in full-stack development, which helps me identify vulnerabilities.</p>
       <p>I’m eager to learn and grow in the field, and I enjoy exploring new cybersecurity trends and contributing to
         projects.</p>
-    </section>
-
-    <section id="certifications" class="mb-10">
-      <h2 class="text-2xl font-semibold text-purple-400 mb-4">Certifications</h2>
-      <ul class="list-disc list-inside space-y-1">
-        <li>CCST Cybersecurity – Cisco</li>
-        <li>Qualys Vulnerability Management Detection and Response Certification (VMDR)</li>
-        <li>Qualys Patch Management (PM)</li>
-        <li>Qualys CyberSecurity Asset Management (CSAM)</li>
-        <li>Qualys Reporting Strategies and Best Practices (RSBP)</li>
-        <li>Qualys Cloud Agent (CA)</li>
-        <li>Qualys Enterprise TruRisk™ Management (ETM)</li>
-        <li>Qualys Scanning Strategies and Best Practices (SSBP)</li>
-      </ul>
-    </section>
-
-    <style>
-        :root {
-          --accent-green: #00ffae;
-          --bg-dark: #0a0f1b;
-          --text-light: #d1d5db;
-        }
-      
-        #projects {
-          margin-bottom: 3rem;
-        }
-      
-        #projects h2 {
-          font-size: 1.5rem;
-          font-weight: 600;
-          color: var(--accent-green);
-          margin-bottom: 1rem;
-        }
-      
-        .project-grid {
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-          gap: 1.5rem;
-          margin-bottom: 2rem;
-        }
-      
-        .flip-card {
-          background-color: transparent;
-          width: 100%;
-          height: 220px;
-          perspective: 1000px;
-        }
-      
-        .flip-card-inner {
-          position: relative;
-          width: 100%;
-          height: 100%;
-          text-align: center;
-          transition: transform 0.8s ease;
-          transform-style: preserve-3d;
-        }
-      
-        .flip-card:hover .flip-card-inner {
-          transform: rotateY(180deg);
-        }
-      
-        .flip-card-front,
-        .flip-card-back {
-          position: absolute;
-          width: 100%;
-          height: 100%;
-          padding: 1.5rem;
-          border-radius: 1rem;
-          backface-visibility: hidden;
-          box-shadow: 0 0 12px rgba(0, 255, 174, 0.2);
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          background-color: #1f2937;
-          color: var(--accent-green);
-        }
-      
-        .flip-card-front h3,
-        .flip-card-back h3 {
-          font-size: 1.2rem;
-          margin-bottom: 0.5rem;
-          font-weight: bold;
-        }
-      
-        .flip-card-front p,
-        .flip-card-back p {
-          color: var(--text-light);
-          font-size: 0.95rem;
-        }
-      
-        .flip-card-back {
-          transform: rotateY(180deg);
-          background-color: #111827;
-        }
-      
-        .flip-card-back a {
-          margin-top: 1rem;
-          color: var(--accent-green);
-          text-decoration: none;
-          font-weight: bold;
-        }
-      
-        .flip-card-back a:hover {
-          text-decoration: underline;
-        }
-      </style>
-      
-      <section id="projects">
-        <h2>Cybersecurity Projects</h2>
-        <div class="project-grid">
-          <!-- Project 1 -->
-          <div class="flip-card">
-            <div class="flip-card-inner">
-              <div class="flip-card-front">
-                <h3>SecureLink Analyzer</h3>
-                <p>Phishing Detection Tool</p>
-              </div>
-              <div class="flip-card-back">
-                <p>End-to-end cybersecurity tool for phishing detection.</p>
-                <a href="https://securevault-password-leak-checker.onrender.com/" target="_blank">🔗 View Live</a>
-              </div>
-            </div>
-          </div>
-      
-          <!-- Project 2 -->
-          <div class="flip-card">
-            <div class="flip-card-inner">
-              <div class="flip-card-front">
-                <h3>Phishing Email Detection Tool</h3>
-                <p>Python, Flask, JavaScript</p>
-              </div>
-              <div class="flip-card-back">
-                <p>Detects phishing emails using header & content analysis.</p>
-                <a href="https://github.com/yourrepo/phishing-detector" target="_blank">📁 View on GitHub</a>
-              </div>
-            </div>
-          </div>
-      
-          <!-- Project 3 -->
-          <div class="flip-card">
-            <div class="flip-card-inner">
-              <div class="flip-card-front">
-                <h3>Mini-SIEM - Security Event Tracker</h3>
-                <p>Python, Flask</p>
-              </div>
-              <div class="flip-card-back">
-                <p>Real-time log collection and event alert system.</p>
-                <a href="https://github.com/yourrepo/mini-siem" target="_blank">📁 View on GitHub</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      
-        <h2>Full-stack Developer Projects</h2>
-        <div class="project-grid">
-          <!-- Project 4 -->
-          <div class="flip-card">
-            <div class="flip-card-inner">
-              <div class="flip-card-front">
-                <h3>OHS Specialist Platform</h3>
-                <p>HTML, JavaScript, TypeScript</p>
-              </div>
-              <div class="flip-card-back">
-                <p>Occupational Health & Safety service web application.</p>
-                <a href="https://www.hulahulaohs.co.za/" target="_blank">🔗 View Live</a>
-              </div>
-            </div>
-          </div>
-      
-          <!-- Project 5 -->
-          <div class="flip-card">
-            <div class="flip-card-inner">
-              <div class="flip-card-front">
-                <h3>Recipe Keeper</h3>
-                <p>Python, Flask, JS, HTML</p>
-              </div>
-              <div class="flip-card-back">
-                <p>Save, search, and manage cooking recipes online.</p>
-                <a href="https://recipe-keeper-brem.onrender.com/" target="_blank">🔗 View Live</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      
-    <section id="skills" class="mb-10">
-      <h2 class="text-2xl font-semibold text-purple-400 mb-4">Skills</h2>
-      <div class="grid grid-cols-2 gap-4">
-        <div>
-          <ul class="list-disc list-inside space-y-1">
-            <li>Python</li>
-            <li>Flask</li>
-            <li>JavaScript</li>
-            <li>HTML/CSS</li>
-            <li>Node.js</li>
-            <li>Wireshark</li>
-            <li>Linux System</li>
-            <li>Database Management</li>
-            
-
-
-          </ul>
-        </div>
-        <div>
-          <canvas id="skillChart" width="400" height="200"></canvas>
-        </div>
-      </div>
     </section>
 
     <section id="experience" class="mb-10">
@@ -282,7 +75,6 @@
       </div>
     </section>
 
-    <!-- New Feature: Education -->
     <section id="education" class="mb-10">
       <h2 class="text-2xl font-semibold text-purple-400 mb-4">Education</h2>
       <ul class="list-disc list-inside space-y-3">
@@ -301,40 +93,372 @@
       </ul>
     </section>
 
-    <!-- New Feature: Awards & Recognitions -->
+    <section id="certifications" class="bg-gray-900 text-white py-12 px-6 max-w-6xl mx-auto">
+      <h2 class="text-3xl font-bold mb-8 border-b-4 border-pink-500 inline-block">
+        Certifications
+      </h2>
+      <table class="min-w-full border-collapse border border-gray-700 text-center">
+        <thead>
+          <tr class="bg-gray-800">
+            <th class="border border-gray-600 px-6 py-3">Certification</th>
+            <th class="border border-gray-600 px-6 py-3">Badge</th>
+            <th class="border border-gray-600 px-6 py-3">Verification Link</th>
+            <th class="border border-gray-600 px-6 py-3">Date Earned</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="bg-gray-800 hover:bg-gray-700">
+            <td class="border border-gray-600 px-6 py-4">Cisco Certified Support Technician Cybersecurity (CCST)</td>
+            <td class="border border-gray-600 px-6 py-4">
+              <img src="/static/Qualys-Logo.wine.png" alt="Qualys RSBP Badge" class="w-16 mx-auto" />
+            </td>
+            <td class="border border-gray-600 px-6 py-4">
+              <a href="https://www.cisco.com/c/en/us/training-events/training-certifications/certifications/associate/ccst-cybersecurity.html" target="_blank" rel="noopener noreferrer" class="text-purple-400 underline hover:text-pink-500">
+                Verify
+              </a>
+            </td>
+            <td class="border border-gray-600 px-6 py-4">2025</td>
+          </tr>
+
+          <tr class="bg-gray-800 hover:bg-gray-700">
+            <td class="border border-gray-600 px-6 py-4">Qualys Vulnerability Management Detection and Response (VMDR)</td>
+            <td class="border border-gray-600 px-6 py-4">
+              <img src="/static/Qualys-Logo.wine.png" alt="Qualys RSBP Badge" class="w-16 mx-auto" />
+            </td>
+            <td class="border border-gray-600 px-6 py-4">
+              <a href="https://www.qualys.com/training/certification/vmdr/" target="_blank" rel="noopener noreferrer" class="text-purple-400 underline hover:text-pink-500">
+                Verify
+              </a>
+            </td>
+            <td class="border border-gray-600 px-6 py-4">2025</td>
+          </tr>
+
+          <tr class="bg-gray-800 hover:bg-gray-700">
+            <td class="border border-gray-600 px-6 py-4">Qualys Patch Management (PM)</td>
+            <td class="border border-gray-600 px-6 py-4">
+              <img src="/static/Qualys-Logo.wine.png" alt="Qualys RSBP Badge" class="w-16 mx-auto" />
+            </td>
+            <td class="border border-gray-600 px-6 py-4">
+              <a href="https://www.qualys.com/training/certification/patch-management/" target="_blank" rel="noopener noreferrer" class="text-purple-400 underline hover:text-pink-500">
+                Verify
+              </a>
+            </td>
+            <td class="border border-gray-600 px-6 py-4">2025</td>
+          </tr>
+
+          <tr class="bg-gray-800 hover:bg-gray-700">
+            <td class="border border-gray-600 px-6 py-4">Qualys CyberSecurity Asset Management (CSAM)</td>
+            <td class="border border-gray-600 px-6 py-4">
+              <img src="/static/Qualys-Logo.wine.png" alt="Qualys RSBP Badge" class="w-16 mx-auto" />
+            </td>
+            <td class="border border-gray-600 px-6 py-4">
+              <a href="https://www.qualys.com/training/certification/csam/" target="_blank" rel="noopener noreferrer" class="text-purple-400 underline hover:text-pink-500">
+                Verify
+              </a>
+            </td>
+            <td class="border border-gray-600 px-6 py-4">2025</td>
+          </tr>
+
+          <tr class="bg-gray-800 hover:bg-gray-700">
+            <td class="border border-gray-600 px-6 py-4">Qualys Reporting Strategies and Best Practices (RSBP)</td>
+            <td class="border border-gray-600 px-6 py-4">
+              <img src="/static/Qualys-Logo.wine.png" alt="Qualys RSBP Badge" class="w-16 mx-auto" />
+            </td>
+            <td class="border border-gray-600 px-6 py-4">
+              <a href="https://www.qualys.com/training/certification/rsbp/" target="_blank" rel="noopener noreferrer" class="text-purple-400 underline hover:text-pink-500">
+                Verify
+              </a>
+            </td>
+            <td class="border border-gray-600 px-6 py-4">2025</td>
+          </tr>
+
+          <tr class="bg-gray-800 hover:bg-gray-700">
+            <td class="border border-gray-600 px-6 py-4">Qualys Cloud Agent (CA)</td>
+            <td class="border border-gray-600 px-6 py-4">
+              <img src="/static/Qualys-Logo.wine.png" alt="Qualys RSBP Badge" class="w-16 mx-auto" />
+            </td>
+            <td class="border border-gray-600 px-6 py-4">
+              <a href="https://www.qualys.com/training/certification/cloud-agent/" target="_blank" rel="noopener noreferrer" class="text-purple-400 underline hover:text-pink-500">
+                Verify
+              </a>
+            </td>
+            <td class="border border-gray-600 px-6 py-4">2025</td>
+          </tr>
+
+          <tr class="bg-gray-800 hover:bg-gray-700">
+            <td class="border border-gray-600 px-6 py-4">Qualys Enterprise TruRisk™ Management (ETM)</td>
+            <td class="border border-gray-600 px-6 py-4">
+              <img src="/static/Qualys-Logo.wine.png" alt="Qualys RSBP Badge" class="w-16 mx-auto" />
+            </td>
+            <td class="border border-gray-600 px-6 py-4">
+              <a href="https://www.qualys.com/training/certification/trurisk/" target="_blank" rel="noopener noreferrer" class="text-purple-400 underline hover:text-pink-500">
+                Verify
+              </a>
+            </td>
+            <td class="border border-gray-600 px-6 py-4">2025</td>
+          </tr>
+
+          <tr class="bg-gray-800 hover:bg-gray-700">
+            <td class="border border-gray-600 px-6 py-4">Qualys Scanning Strategies and Best Practices (SSBP)</td>
+            <td class="border border-gray-600 px-6 py-4">
+              <img src="/static/Qualys-Logo.wine.png" alt="Qualys RSBP Badge" class="w-16 mx-auto" />
+            </td>
+            <td class="border border-gray-600 px-6 py-4">
+              <a href="https://www.qualys.com/training/certification/ssbp/" target="_blank" rel="noopener noreferrer" class="text-purple-400 underline hover:text-pink-500">
+                Verify
+              </a>
+            </td>
+            <td class="border border-gray-600 px-6 py-4">2025</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <br>
+    <br>
+
+    <section id="skills" class="mb-10">
+      <h2 class="text-2xl font-semibold text-purple-400 mb-4">Skills</h2>
+      <div class="grid grid-cols-2 gap-4">
+        <div>
+          <ul class="list-disc list-inside space-y-1">
+            <li>Python</li>
+            <li>Flask</li>
+            <li>JavaScript</li>
+            <li>HTML/CSS</li>
+            <li>Node.js</li>
+            <li>Wireshark</li>
+            <li>Linux System</li>
+            <li>Database Management</li>
+          </ul>
+        </div>
+        <div>
+          <canvas id="skillChart" width="400" height="200"></canvas>
+        </div>
+      </div>
+    </section>
+
+    <section id="tools" class="mb-10">
+      <h2 class="text-2xl font-semibold text-purple-400 mb-4">Tools & Technologies</h2>
+      <div class="flex flex-wrap gap-3">
+        <button class="bg-purple-600 hover:bg-pink-500 text-white px-4 py-2 rounded-full text-sm transition duration-300 ease-in-out">Python</button>
+        <button class="bg-purple-600 hover:bg-pink-500 text-white px-4 py-2 rounded-full text-sm transition duration-300 ease-in-out">Flask</button>
+        <button class="bg-purple-600 hover:bg-pink-500 text-white px-4 py-2 rounded-full text-sm transition duration-300 ease-in-out">JavaScript</button>
+        <button class="bg-purple-600 hover:bg-pink-500 text-white px-4 py-2 rounded-full text-sm transition duration-300 ease-in-out">Tailwind CSS</button>
+        <button class="bg-purple-600 hover:bg-pink-500 text-white px-4 py-2 rounded-full text-sm transition duration-300 ease-in-out">HTML</button>
+        <button class="bg-purple-600 hover:bg-pink-500 text-white px-4 py-2 rounded-full text-sm transition duration-300 ease-in-out">Git & GitHub</button>
+        <button class="bg-purple-600 hover:bg-pink-500 text-white px-4 py-2 rounded-full text-sm transition duration-300 ease-in-out">Wireshark</button>
+        <button class="bg-purple-600 hover:bg-pink-500 text-white px-4 py-2 rounded-full text-sm transition duration-300 ease-in-out">Nmap</button>
+        <button class="bg-purple-600 hover:bg-pink-500 text-white px-4 py-2 rounded-full text-sm transition duration-300 ease-in-out">Postman</button>
+        <button class="bg-purple-600 hover:bg-pink-500 text-white px-4 py-2 rounded-full text-sm transition duration-300 ease-in-out">VirusTotal</button>
+        <button class="bg-purple-600 hover:bg-pink-500 text-white px-4 py-2 rounded-full text-sm transition duration-300 ease-in-out">Hacker101</button>
+        <button class="bg-purple-600 hover:bg-pink-500 text-white px-4 py-2 rounded-full text-sm transition duration-300 ease-in-out">Burp Suite</button>
+      </div>
+    </section>
+
+    <style>
+      :root {
+        --accent-green: #00ffae;
+        --bg-dark: #0a0f1b;
+        --text-light: #d1d5db;
+      }
+
+      #projects {
+        margin-bottom: 3rem;
+      }
+
+      #projects h2 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: var(--accent-green);
+        margin-bottom: 1rem;
+      }
+
+      .project-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.5rem;
+        margin-bottom: 2rem;
+      }
+
+      .flip-card {
+        background-color: transparent;
+        width: 100%;
+        height: 220px;
+        perspective: 1000px;
+      }
+
+      .flip-card-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        transition: transform 0.8s ease;
+        transform-style: preserve-3d;
+      }
+
+      .flip-card:hover .flip-card-inner {
+        transform: rotateY(180deg);
+      }
+
+      .flip-card-front,
+      .flip-card-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        padding: 1.5rem;
+        border-radius: 1rem;
+        backface-visibility: hidden;
+        box-shadow: 0 0 12px rgba(0, 255, 174, 0.2);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background-color: #1f2937;
+        color: var(--accent-green);
+      }
+
+      .flip-card-front h3,
+      .flip-card-back h3 {
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+        font-weight: bold;
+      }
+
+      .flip-card-front p,
+      .flip-card-back p {
+        color: var(--text-light);
+        font-size: 0.95rem;
+      }
+
+      .flip-card-back {
+        transform: rotateY(180deg);
+        background-color: #111827;
+      }
+
+      .flip-card-back a {
+        margin-top: 1rem;
+        color: var(--accent-green);
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+      .flip-card-back a:hover {
+        text-decoration: underline;
+      }
+    </style>
+
+    <section id="projects">
+      <h2>Cybersecurity Projects</h2>
+      <div class="project-grid">
+
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <div class="project-image-placeholder"></div>
+              <h3>SecureLink Analyzer</h3>
+              <img src="/static/Background of cyber security and network protection_ _ Premium Vector.jpeg" alt="secured link Platform Screenshot" class="project-screenshot">
+            </div>
+            <div class="flip-card-back">
+              <p>End-to-end cybersecurity tool for phishing detection.</p>
+              <p>SecureVault</p>
+              <a href="https://securevault-password-leak-checker.onrender.com/" target="_blank">🔗 View Live</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <h3>Phishing Email Detection Tool</h3>
+              <img src="/static/11111.png" alt="Phishing Email Detection Tool Screenshot" class="project-front-image">
+
+            </div>
+            <div class="flip-card-back">
+              <p class="tech-stack">Python, Flask, JavaScript</p>
+              <p>Detects phishing emails using header & content analysis.</p>
+              <a href="https://github.com/yourrepo/phishing-detector" target="_blank">📁 View on GitHub</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <h3>Mini-SIEM - Security Event Tracker</h3>
+              <img src="/static/🛡️ Safeguarding digital truth!__• Enhancing media literacy 📚__• Secure verification tools 🔐__• Transparency & openness 🎈____Public Trust Solutions champions these pillars alongside the public sector to counter digital d.jpeg" alt="Mini-SIEM" class="project-screenshot">
+
+            </div>
+            <div class="flip-card-back">
+              <p>Real-time log collection and event alert system.</p>
+              <a href="https://mini-siem-security-event-tracker.onrender.com" target="_blank">🔗 View Live</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h3>Full-stack Developer Projects</h3>
+      <div class="projects-container">
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <h3>OHS Specialist Platform</h3>
+              <img src="/static/construction.png" alt="OHS Specialist Platform Screenshot" class="project-screenshot">
+            </div>
+            <div class="flip-card-back">
+              <p>HTML, JavaScript, TypeScript</p>
+              <p>Occupational Health & Safety service web application.</p>
+              <a href="https://www.hulahulaohs.co.za/" target="_blank">🔗 View Live</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <h3>Recipe Keeper</h3>
+              <img src="/static/_ (15).jpeg" alt="recipe keeper Platform Screenshot" class="project-screenshot">
+            </div>
+            <div class="flip-card-back">
+              <p>Python, Flask, JS, HTML</p>
+              <p>Save, search, and manage cooking recipes online.</p>
+              <a href="https://recipe-keeper-brem.onrender.com/" target="_blank">🔗 View Live</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="hands-on-training">
+      <h2>Hands-On Training Links</h2>
+      <ul>
+        <li>
+          <a href="https://tryhackme.com/dashboard" target="_blank" rel="noopener noreferrer">
+            TryHackMe Labs Profile
+          </a>
+        </li>
+        <li>
+          <a href="https://cyberdefenders.org/dashboard/" target="_blank" rel="noopener noreferrer">
+            Cyberdefenders Profile
+          </a>
+        </li>
+        <li>
+          <a href="https://app.letsdefend.io/homepage" target="_blank" rel="noopener noreferrer">
+            LetsDefend Profile
+          </a>
+        </li>
+      </ul>
+    </section>
+
     <section id="awards" class="mb-10">
       <h2 class="text-2xl font-semibold text-purple-400 mb-4">Awards & Recognitions</h2>
       <ul class="list-disc list-inside space-y-2">
         <li>CCST Cybersecurity Certification - Cisco (2025)</li>
-        <!-- <li>Best Full-stack Project - Recipe keeper</li> -->
-      </ul>
+        </ul>
     </section>
 
-    <!-- New Feature: Tools & Technologies -->
-    <section id="tools" class="mb-10">
-        <h2 class="text-2xl font-semibold text-purple-400 mb-4">Tools & Technologies</h2>
-        <div class="flex flex-wrap gap-3">
-          <button class="bg-purple-600 hover:bg-pink-500 text-white px-4 py-2 rounded-full text-sm transition duration-300 ease-in-out">Python</button>
-          <button class="bg-purple-600 hover:bg-pink-500 text-white px-4 py-2 rounded-full text-sm transition duration-300 ease-in-out">Flask</button>
-          <button class="bg-purple-600 hover:bg-pink-500 text-white px-4 py-2 rounded-full text-sm transition duration-300 ease-in-out">JavaScript</button>
-          <button class="bg-purple-600 hover:bg-pink-500 text-white px-4 py-2 rounded-full text-sm transition duration-300 ease-in-out">Tailwind CSS</button>
-          <button class="bg-purple-600 hover:bg-pink-500 text-white px-4 py-2 rounded-full text-sm transition duration-300 ease-in-out">HTML</button>
-          <button class="bg-purple-600 hover:bg-pink-500 text-white px-4 py-2 rounded-full text-sm transition duration-300 ease-in-out">Git & GitHub</button>
-          <button class="bg-purple-600 hover:bg-pink-500 text-white px-4 py-2 rounded-full text-sm transition duration-300 ease-in-out">Wireshark</button>
-          <button class="bg-purple-600 hover:bg-pink-500 text-white px-4 py-2 rounded-full text-sm transition duration-300 ease-in-out">Nmap</button>
-          <button class="bg-purple-600 hover:bg-pink-500 text-white px-4 py-2 rounded-full text-sm transition duration-300 ease-in-out">Postman</button>
-          <button class="bg-purple-600 hover:bg-pink-500 text-white px-4 py-2 rounded-full text-sm transition duration-300 ease-in-out">VirusTotal</button>
-          <button class="bg-purple-600 hover:bg-pink-500 text-white px-4 py-2 rounded-full text-sm transition duration-300 ease-in-out">Hacker101</button>
-          <button class="bg-purple-600 hover:bg-pink-500 text-white px-4 py-2 rounded-full text-sm transition duration-300 ease-in-out">Burp Suite</button>
-        </div>
-      </section>
-      
-
-
-
-
     <section id="contact" class="mb-10">
-      <h2 class="text-2xl font-semibold text--400 mb-4">Contact Me</h2>
+      <h2 class="text-2xl font-semibold text-purple-400 mb-4">Contact Me</h2>
       <form class="space-y-4 max-w-lg" action="#" method="POST">
         <input type="text" name="name" placeholder="Your Name"
           class="w-full p-3 rounded bg-gray-700 border border-gray-600 focus:outline-none focus:border-pink-500" required />
@@ -345,6 +469,24 @@
         <button type="submit"
           class="bg-pink-600 hover:bg-pink-700 transition-colors px-6 py-3 rounded font-semibold text-white">Send</button>
       </form>
+    </section>
+
+    <section id="connect">
+      <h2>Connect with Me</h2>
+      <div class="social-links">
+        <a href="https://www.linkedin.com/in/sasekani-maluleke-026736165/" target="_blank">
+          <i class="fab fa-linkedin"></i> LinkedIn
+        </a>
+        <a href="https://discord.com/users/yourdiscordid" target="_blank">
+          <i class="fab fa-discord"></i> Discord
+        </a>
+        <a href="https://github.com/sasekaninkuri" target="_blank">
+          <i class="fab fa-github"></i> GitHub
+        </a>
+        <a href="https://wa.me/+27837719479" target="_blank">
+          <i class="fab fa-whatsapp"></i> WhatsApp
+        </a>
+      </div>
     </section>
 
     <section id="cv" class="mb-10">
@@ -425,7 +567,6 @@
       easing: 'ease-in-out',
       cleanup: true
     });
-
   </script>
 </body>
 

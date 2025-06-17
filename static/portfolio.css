@@ -10,6 +10,11 @@
     --accent-purple: #7c5fff;
     --accent-yellow: #e3ff00;
     --border-color: #1f2937;
+    --accent-green: #00ffae;
+    --bg-dark: #0a0f1b;
+    --text-light: #e5e7eb;
+
+    
   
     --glow: 0 0 10px var(--accent-blue), 0 0 15px var(--accent-green);
   }
@@ -269,28 +274,28 @@
   #projects {
     margin-bottom: 3rem;
   }
-
+  
   #projects h2 {
     font-size: 1.5rem;
     font-weight: 600;
     color: var(--accent-green);
     margin-bottom: 1rem;
   }
-
+  
   .project-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 1.5rem;
     margin-bottom: 2rem;
   }
-
+  
   .flip-card {
     background-color: transparent;
     width: 100%;
     height: 220px;
     perspective: 1000px;
   }
-
+  
   .flip-card-inner {
     position: relative;
     width: 100%;
@@ -299,11 +304,11 @@
     transition: transform 0.8s ease;
     transform-style: preserve-3d;
   }
-
+  
   .flip-card:hover .flip-card-inner {
     transform: rotateY(180deg);
   }
-
+  
   .flip-card-front,
   .flip-card-back {
     position: absolute;
@@ -319,36 +324,267 @@
     background-color: #1f2937;
     color: var(--accent-green);
   }
-
+  
+  /* Remove border-radius from project screenshots */
+  .flip-card-front img.project-screenshot,
+  .flip-card-front img.project-front-image {
+    border-radius: 0; /* This line removes the border-radius */
+    max-width: 100%;
+    height: auto; /* It's often better to use auto for height if max-width is 100% to maintain aspect ratio */
+    display: block; /* Ensures no extra space below the image */
+    margin-bottom: 0.5rem; /* Adjust as needed */
+  }
+  
   .flip-card-front h3,
   .flip-card-back h3 {
     font-size: 1.2rem;
     margin-bottom: 0.5rem;
     font-weight: bold;
   }
-
+  
   .flip-card-front p,
   .flip-card-back p {
     color: var(--text-light);
     font-size: 0.95rem;
   }
-
+  
   .flip-card-back {
     transform: rotateY(180deg);
     background-color: #111827;
   }
-
+  
   .flip-card-back a {
     margin-top: 1rem;
     color: var(--accent-green);
     text-decoration: none;
     font-weight: bold;
   }
-
+  
   .flip-card-back a:hover {
     text-decoration: underline;
   }
   
+  #connect {
+    padding: 2rem 1rem;
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    text-align: center;
+    border-top: 1px solid rgba(0, 255, 174, 0.2);
+  }
+
+  #connect h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--accent-green);
+    margin-bottom: 1rem;
+  }
+
+  .social-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .social-links a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: #1f2937;
+    color: var(--accent-green);
+    padding: 0.75rem 1.2rem;
+    border-radius: 9999px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.2s;
+    box-shadow: 0 0 10px rgba(0, 255, 174, 0.2);
+  }
+
+  .social-links a:hover {
+    background-color: #0f172a;
+    transform: translateY(-3px);
+    text-decoration: none;
+  }
+
+  .social-links i {
+    font-size: 1.2rem;
+  }
+
+  .project-ohs-background {
+    background-image: url('path/to/your/ohs-project-screenshot.jpg'); /* Your image path */
+    background-size: cover; /* Ensures the image covers the entire area */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    display: flex; /* To help position content on top */
+    flex-direction: column;
+    justify-content: flex-end; /* Pushes content to the bottom */
+    align-items: center;
+    padding: 20px; /* Adjust padding as needed */
+    color: white; /* For text readability over the image */
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.7); /* Optional: Adds shadow for readability */
+  }
   
+  .project-ohs-background p {
+    /* Style your paragraph text to be readable over the image */
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for readability */
+    padding: 5px 10px;
+    border-radius: 3px;
+    margin-bottom: 10px; /* Space between text and button */
+  }
+  
+  .view-live-button {
+    display: inline-block;
+    background-color: #007bff; /* Example button color */
+    color: white;
+    padding: 8px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .view-live-button:hover {
+    background-color: #0056b3;
+  }
+
+  .projects-container {
+    display: flex; /* Makes the container a flex container */
+    flex-wrap: wrap; /* Allows cards to wrap to the next line on smaller screens */
+    justify-content: center; /* Centers the cards horizontally */
+    gap: 20px; /* Adds space between cards */
+    padding: 20px; /* Optional: adds padding around the container */
+}
+
+.flip-card {
+    /* Set a base width for your cards.
+       calc() is useful for distributing space while accounting for gaps. */
+    flex: 1 1 calc(50% - 30px); /* This means:
+                                   - flex-grow: 1 (allow it to grow)
+                                   - flex-shrink: 1 (allow it to shrink)
+                                   - flex-basis: calc(50% - 30px) (try to take 50% of the parent's width, minus half the gap on each side)
+                                */
+    max-width: 400px; /* Optional: Sets a maximum width for larger screens */
+    min-width: 280px; /* Optional: Ensures cards don't get too small */
+    height: 300px; /* Adjust height as needed */
+    /* Add existing flip-card styles here */
+}
+
+/* Media query for smaller screens, e.g., mobile */
+@media (max-width: 768px) {
+    .flip-card {
+        flex: 1 1 100%; /* On small screens, each card takes full width */
+    }
+}
+
+/* Container styles */
+#certifications {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+  background-color: #1a202c; /* Tailwind's gray-900 */
+  color: #fff;
+  border-radius: 0.5rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Table styles */
+#certifications table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #4a5568; /* Tailwind gray-600 */
+}
+
+/* Header */
+#certifications thead tr {
+  background-color: #2d3748; /* Tailwind gray-800 */
+}
+
+#certifications thead th {
+  padding: 0.75rem 1rem;
+  border: 1px solid #4a5568;
+  font-weight: 600;
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+/* Table rows */
+#certifications tbody tr {
+  background-color: #2d3748;
+  transition: background-color 0.3s ease;
+}
+
+#certifications tbody tr:hover {
+  background-color: #4c51bf; /* Indigo-600 */
+}
+
+/* Table cells */
+#certifications tbody td {
+  padding: 0.75rem 1rem;
+  border: 1px solid #4a5568;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 1rem;
+}
+
+/* Badge image */
+#certifications tbody img {
+  width: 64px;
+  height: auto;
+  border-radius: 0.25rem;
+}
+
+/* Links */
+#certifications a {
+  color: #a78bfa; /* Lavender */
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+#certifications a:hover {
+  color: #f472b6; /* Pink-400 */
+}
+
+/* Responsive: stack table on small screens */
+@media (max-width: 640px) {
+  #certifications table,
+  #certifications thead,
+  #certifications tbody,
+  #certifications th,
+  #certifications td,
+  #certifications tr {
+    display: block;
+    width: 100%;
+  }
+  #certifications thead tr {
+    display: none; /* Hide table header */
+  }
+  #certifications tbody tr {
+    margin-bottom: 1.5rem;
+    border: 1px solid #4a5568;
+    border-radius: 0.5rem;
+    padding: 1rem;
+  }
+  #certifications tbody td {
+    text-align: right;
+    padding-left: 50%;
+    position: relative;
+    border: none;
+    border-bottom: 1px solid #4a5568;
+  }
+  #certifications tbody td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 1rem;
+    width: 45%;
+    padding-left: 0.5rem;
+    font-weight: 600;
+    text-align: left;
+  }
+  #certifications tbody td:last-child {
+    border-bottom: 0;
+  }
+}
+
 
   
