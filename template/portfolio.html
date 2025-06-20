@@ -44,6 +44,170 @@
     </nav>
   </header>
 
+  <!-- Sidebar + Dashboard layout -->
+<section id="dashboard" class="mb-10">
+  <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
+    <!-- Sidebar -->
+    <aside class="md:col-span-1 bg-gray-800 p-4 rounded-lg shadow-md h-full">
+      <h3 class="text-xl font-bold text-purple-400 mb-4">Dashboard Menu</h3>
+      <ul class="space-y-2 text-sm">
+        <li><a href="#stats" class="block text-purple-300 hover:text-pink-400">📊 Overview</a></li>
+        <li><a href="#cert-summary" class="block text-purple-300 hover:text-pink-400">🏅 Certifications</a></li>
+        <li><a href="#project-insights" class="block text-purple-300 hover:text-pink-400">🧪 Projects</a></li>
+        <li><a href="#contact-tracking" class="block text-purple-300 hover:text-pink-400">📩 Contacts</a></li>
+      </ul>
+    </aside>
+
+    <!-- Dashboard Content -->
+    <div class="md:col-span-4 bg-gray-800 p-6 rounded-lg shadow-lg">
+      <h2 class="text-2xl font-bold text-purple-400 mb-6">📊 Dashboard</h2>
+      <div id="stats" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="bg-gray-700 p-4 rounded-xl shadow-md text-center">
+          <h4 class="text-xl font-semibold text-pink-500">Certifications</h4>
+          <p class="text-3xl font-bold">8</p>
+        </div>
+        <div class="bg-gray-700 p-4 rounded-xl shadow-md text-center">
+          <h4 class="text-xl font-semibold text-pink-500">Projects</h4>
+          <p class="text-3xl font-bold">6</p>
+        </div>
+        <div class="bg-gray-700 p-4 rounded-xl shadow-md text-center">
+          <h4 class="text-xl font-semibold text-pink-500">Tools Mastered</h4>
+          <p class="text-3xl font-bold">12</p>
+        </div>
+      </div>
+
+      <div id="project-insights" class="mt-8">
+        <h3 class="text-xl font-semibold text-purple-300 mb-4">🔍 Project Insights</h3>
+        <canvas id="projectChart" height="60"></canvas>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Include in script section -->
+<script>
+  const ctx2 = document.getElementById('projectChart').getContext('2d');
+  new Chart(ctx2, {
+    type: 'doughnut',
+    data: {
+      labels: ['Cybersecurity', 'Full-Stack Dev', 'Utilities'],
+      datasets: [{
+        label: 'Projects Distribution',
+        data: [3, 2, 1],
+        backgroundColor: ['#c084fc', '#22d3ee', '#00ffae'],
+        borderColor: '#111827',
+        borderWidth: 2
+      }]
+    },
+    options: {
+      plugins: {
+        legend: {
+          labels: {
+            color: 'white'
+          }
+        }
+      }
+    }
+  });
+</script>
+
+
+    <style>
+      :root {
+        --accent-green: #00ffae;
+        --bg-dark: #0a0f1b;
+        --text-light: #d1d5db;
+      }
+
+      #projects {
+        margin-bottom: 3rem;
+      }
+
+      #projects h2 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: var(--accent-green);
+        margin-bottom: 1rem;
+      }
+
+      .project-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.5rem;
+        margin-bottom: 2rem;
+      }
+
+      .flip-card {
+        background-color: transparent;
+        width: 100%;
+        height: 220px;
+        perspective: 1000px;
+      }
+
+      .flip-card-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        transition: transform 0.8s ease;
+        transform-style: preserve-3d;
+      }
+
+      .flip-card:hover .flip-card-inner {
+        transform: rotateY(180deg);
+      }
+
+      .flip-card-front,
+      .flip-card-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        padding: 1.5rem;
+        border-radius: 1rem;
+        backface-visibility: hidden;
+        box-shadow: 0 0 12px rgba(0, 255, 174, 0.2);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background-color: #1f2937;
+        color: var(--accent-green);
+      }
+
+      .flip-card-front h3,
+      .flip-card-back h3 {
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+        font-weight: bold;
+      }
+
+      .flip-card-front p,
+      .flip-card-back p {
+        color: var(--text-light);
+        font-size: 0.95rem;
+      }
+
+      .flip-card-back {
+        transform: rotateY(180deg);
+        background-color: #111827;
+      }
+
+      .flip-card-back a {
+        margin-top: 1rem;
+        color: var(--accent-green);
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+      .flip-card-back a:hover {
+        text-decoration: underline;
+      }
+
+      #projectChart {
+      max-width: 300px;
+      margin: 0 auto;
+    }
+    </style>
+
   <main class="max-w-6xl mx-auto px-4 py-8 space-y-16">
     <section id="about" class="mb-10">
       <h2 class="text-2xl font-semibold text-purple-400 mb-2">About Me</h2>
@@ -254,97 +418,10 @@
         <button class="bg-purple-600 hover:bg-pink-500 text-white px-4 py-2 rounded-full text-sm transition duration-300 ease-in-out">Burp Suite</button>
       </div>
     </section>
+    <!-- Additional content added to your portfolio -->
 
-    <style>
-      :root {
-        --accent-green: #00ffae;
-        --bg-dark: #0a0f1b;
-        --text-light: #d1d5db;
-      }
+<!-- Sidebar + Dashboard layout -->
 
-      #projects {
-        margin-bottom: 3rem;
-      }
-
-      #projects h2 {
-        font-size: 1.5rem;
-        font-weight: 600;
-        color: var(--accent-green);
-        margin-bottom: 1rem;
-      }
-
-      .project-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 1.5rem;
-        margin-bottom: 2rem;
-      }
-
-      .flip-card {
-        background-color: transparent;
-        width: 100%;
-        height: 220px;
-        perspective: 1000px;
-      }
-
-      .flip-card-inner {
-        position: relative;
-        width: 100%;
-        height: 100%;
-        text-align: center;
-        transition: transform 0.8s ease;
-        transform-style: preserve-3d;
-      }
-
-      .flip-card:hover .flip-card-inner {
-        transform: rotateY(180deg);
-      }
-
-      .flip-card-front,
-      .flip-card-back {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        padding: 1.5rem;
-        border-radius: 1rem;
-        backface-visibility: hidden;
-        box-shadow: 0 0 12px rgba(0, 255, 174, 0.2);
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        background-color: #1f2937;
-        color: var(--accent-green);
-      }
-
-      .flip-card-front h3,
-      .flip-card-back h3 {
-        font-size: 1.2rem;
-        margin-bottom: 0.5rem;
-        font-weight: bold;
-      }
-
-      .flip-card-front p,
-      .flip-card-back p {
-        color: var(--text-light);
-        font-size: 0.95rem;
-      }
-
-      .flip-card-back {
-        transform: rotateY(180deg);
-        background-color: #111827;
-      }
-
-      .flip-card-back a {
-        margin-top: 1rem;
-        color: var(--accent-green);
-        text-decoration: none;
-        font-weight: bold;
-      }
-
-      .flip-card-back a:hover {
-        text-decoration: underline;
-      }
-    </style>
 
     <section id="projects">
       <h2>Cybersecurity Projects</h2>
@@ -390,6 +467,7 @@
             <div class="flip-card-back">
               <p>Real-time log collection and event alert system.</p>
               <a href="https://mini-siem-security-event-tracker.onrender.com" target="_blank">🔗 View Live</a>
+              <p></p>
             </div>
           </div>
         </div>
@@ -412,6 +490,21 @@
             </div>
           </div>
         </div>
+
+        <div class="projects-container">
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <h3>Reception 88</h3>
+                <img src="/image copy 3.png" alt=" Admin Salon" class="project-screenshot">
+              </div>
+              <div class="flip-card-back">
+                <p>HTML, JavaScript, CSS, Python</p>
+                <p>Admin Salon website.</p>
+                <a href="https://github.com/sasekaninkuri/Admin-salon/blob/main/Admin_Salon_PWD-1/app.py" target="_blank">🔗view on github</a>
+              </div>
+            </div>
+          </div>
 
         <div class="flip-card">
           <div class="flip-card-inner">
@@ -445,6 +538,11 @@
         <li>
           <a href="https://app.letsdefend.io/homepage" target="_blank" rel="noopener noreferrer">
             LetsDefend Profile
+          </a>
+        </li>
+        <li>
+          <a href="https://ctf.hacker101.com/ctf" target="_blank" rel="noopener noreferrer">
+            Hacker101 Profile
           </a>
         </li>
       </ul>
