@@ -8,11 +8,10 @@
   <link rel="stylesheet" href="/portfolio.css">
 
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
-
   <script src="https://unpkg.com/scrollreveal"></script>
 </head>
 
@@ -30,25 +29,54 @@
         </p>
       </div>
       <nav class="mt-4 text-center space-x-4 text-purple-300">
-      <a href="#about" class="hover:underline">About</a>
-      <a href="#experience" class="hover:underline">Experience</a>
-      <a href="#education" class="hover:underline">Education</a>
-      <a href="#certifications" class="hover:underline">Certifications</a>
-      <a href="#skills" class="hover:underline">Skills</a>
-      <a href="#tools" class="hover:underline">Tools</a>
-      <a href="#projects" class="hover:underline">Projects</a>
-      <a href="#hands-on-training" class="hover:underline">Training</a>
-      <a href="#awards" class="hover:underline">Awards</a>
-      <a href="#contact" class="hover:underline">Contact</a>
-      <a href="#cv" class="hover:underline">CV</a>
-    </nav>
+        <a href="#about" class="hover:underline">About</a>
+        <a href="#experience" class="hover:underline">Experience</a>
+        <a href="#education" class="hover:underline">Education</a>
+        <a href="#certifications" class="hover:underline">Certifications</a>
+        <a href="#skills" class="hover:underline">Skills</a>
+        <a href="#tools" class="hover:underline">Tools</a>
+        <a href="#projects" class="hover:underline">Projects</a>
+        <a href="#hands-on-training" class="hover:underline">Training</a>
+        <a href="#awards" class="hover:underline">Awards</a>
+        <a href="#contact" class="hover:underline">Contact</a>
+        <a href="#cv" class="hover:underline">CV</a>
+      </nav>
   </header>
+  <section id="dashboard" class="mb-16">
+    <h2 class="text-3xl font-bold text-purple-400 mb-8 border-b-4 border-pink-500 inline-block">
+      📊 Dashboard Overview
+    </h2>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-8">
+      <div class="bg-gray-800 p-6 rounded-lg shadow-md text-center">
+        <h3 class="text-xl font-bold text-pink-400">Certifications</h3>
+        <p class="text-3xl font-bold text-green-400 mt-2">8</p>
+      </div>
+      <div class="bg-gray-800 p-6 rounded-lg shadow-md text-center">
+        <h3 class="text-xl font-bold text-pink-400">Projects</h3>
+        <p class="text-3xl font-bold text-green-400 mt-2">6</p>
+      </div>
+      <div class="bg-gray-800 p-6 rounded-lg shadow-md text-center">
+        <h3 class="text-xl font-bold text-pink-400">Tools & Tech</h3>
+        <p class="text-3xl font-bold text-green-400 mt-2">12+</p>
+      </div>
+    </div>
+
+    <div class="bg-gray-800 p-6 rounded-lg shadow-md">
+      <h3 class="text-lg font-bold text-purple-300 mb-4">Skill Proficiency (Pie)</h3>
+      <div class="chart-container-small mx-auto"> 
+        <canvas id="dashboardSkillPie"></canvas>
+      </div>
+    </div>
+  </section>
+
 
   <main class="max-w-6xl mx-auto px-4 py-8 space-y-16">
     <section id="about" class="mb-10">
       <h2 class="text-2xl font-semibold text-purple-400 mb-2">About Me</h2>
       <p class="mb-2">I'm Sasekani Maluleke, a junior cybersecurity analyst with a passion for web security. I hold a
-        CCST certification and have a background in full-stack development, which helps me identify vulnerabilities.</p>
+        CCST certification and have a background in full-stack development, which helps me identify vulnerabilities.
+      </p>
       <p>I’m eager to learn and grow in the field, and I enjoy exploring new cybersecurity trends and contributing to
         projects.</p>
     </section>
@@ -110,10 +138,12 @@
           <tr class="bg-gray-800 hover:bg-gray-700">
             <td class="border border-gray-600 px-6 py-4">Cisco Certified Support Technician Cybersecurity (CCST)</td>
             <td class="border border-gray-600 px-6 py-4">
-              <img src="/static/Qualys-Logo.wine.png" alt="Qualys RSBP Badge" class="w-16 mx-auto" />
+              <img src="/Qualys-Logo.wine.png" alt="Qualys RSBP Badge" class="w-16 mx-auto" />
             </td>
             <td class="border border-gray-600 px-6 py-4">
-              <a href="https://www.cisco.com/c/en/us/training-events/training-certifications/certifications/associate/ccst-cybersecurity.html" target="_blank" rel="noopener noreferrer" class="text-purple-400 underline hover:text-pink-500">
+              <a
+                href="https://www.cisco.com/c/en/us/training-events/training-certifications/certifications/associate/ccst-cybersecurity.html"
+                target="_blank" rel="noopener noreferrer" class="text-purple-400 underline hover:text-pink-500">
                 Verify
               </a>
             </td>
@@ -121,12 +151,14 @@
           </tr>
 
           <tr class="bg-gray-800 hover:bg-gray-700">
-            <td class="border border-gray-600 px-6 py-4">Qualys Vulnerability Management Detection and Response (VMDR)</td>
-            <td class="border border-gray-600 px-6 py-4">
-              <img src="/static/Qualys-Logo.wine.png" alt="Qualys RSBP Badge" class="w-16 mx-auto" />
+            <td class="border border-gray-600 px-6 py-4">Qualys Vulnerability Management Detection and Response (VMDR)
             </td>
             <td class="border border-gray-600 px-6 py-4">
-              <a href="https://www.qualys.com/training/certification/vmdr/" target="_blank" rel="noopener noreferrer" class="text-purple-400 underline hover:text-pink-500">
+              <img src="/Qualys-Logo.wine.png" alt="Qualys RSBP Badge" class="w-16 mx-auto" />
+            </td>
+            <td class="border border-gray-600 px-6 py-4">
+              <a href="https://www.qualys.com/training/certification/vmdr/" target="_blank"
+                rel="noopener noreferrer" class="text-purple-400 underline hover:text-pink-500">
                 Verify
               </a>
             </td>
@@ -136,10 +168,11 @@
           <tr class="bg-gray-800 hover:bg-gray-700">
             <td class="border border-gray-600 px-6 py-4">Qualys Patch Management (PM)</td>
             <td class="border border-gray-600 px-6 py-4">
-              <img src="/static/Qualys-Logo.wine.png" alt="Qualys RSBP Badge" class="w-16 mx-auto" />
+              <img src="/Qualys-Logo.wine.png" alt="Qualys RSBP Badge" class="w-16 mx-auto" />
             </td>
             <td class="border border-gray-600 px-6 py-4">
-              <a href="https://www.qualys.com/training/certification/patch-management/" target="_blank" rel="noopener noreferrer" class="text-purple-400 underline hover:text-pink-500">
+              <a href="https://www.qualys.com/training/certification/patch-management/" target="_blank"
+                rel="noopener noreferrer" class="text-purple-400 underline hover:text-pink-500">
                 Verify
               </a>
             </td>
@@ -149,10 +182,11 @@
           <tr class="bg-gray-800 hover:bg-gray-700">
             <td class="border border-gray-600 px-6 py-4">Qualys CyberSecurity Asset Management (CSAM)</td>
             <td class="border border-gray-600 px-6 py-4">
-              <img src="/static/Qualys-Logo.wine.png" alt="Qualys RSBP Badge" class="w-16 mx-auto" />
+              <img src="/Qualys-Logo.wine.png" alt="Qualys RSBP Badge" class="w-16 mx-auto" />
             </td>
             <td class="border border-gray-600 px-6 py-4">
-              <a href="https://www.qualys.com/training/certification/csam/" target="_blank" rel="noopener noreferrer" class="text-purple-400 underline hover:text-pink-500">
+              <a href="https://www.qualys.com/training/certification/csam/" target="_blank"
+                rel="noopener noreferrer" class="text-purple-400 underline hover:text-pink-500">
                 Verify
               </a>
             </td>
@@ -162,10 +196,11 @@
           <tr class="bg-gray-800 hover:bg-gray-700">
             <td class="border border-gray-600 px-6 py-4">Qualys Reporting Strategies and Best Practices (RSBP)</td>
             <td class="border border-gray-600 px-6 py-4">
-              <img src="/static/Qualys-Logo.wine.png" alt="Qualys RSBP Badge" class="w-16 mx-auto" />
+              <img src="/Qualys-Logo.wine.png" alt="Qualys RSBP Badge" class="w-16 mx-auto" />
             </td>
             <td class="border border-gray-600 px-6 py-4">
-              <a href="https://www.qualys.com/training/certification/rsbp/" target="_blank" rel="noopener noreferrer" class="text-purple-400 underline hover:text-pink-500">
+              <a href="https://www.qualys.com/training/certification/rsbp/" target="_blank"
+                rel="noopener noreferrer" class="text-purple-400 underline hover:text-pink-500">
                 Verify
               </a>
             </td>
@@ -175,10 +210,11 @@
           <tr class="bg-gray-800 hover:bg-gray-700">
             <td class="border border-gray-600 px-6 py-4">Qualys Cloud Agent (CA)</td>
             <td class="border border-gray-600 px-6 py-4">
-              <img src="/static/Qualys-Logo.wine.png" alt="Qualys RSBP Badge" class="w-16 mx-auto" />
+              <img src="/Qualys-Logo.wine.png" alt="Qualys RSBP Badge" class="w-16 mx-auto" />
             </td>
             <td class="border border-gray-600 px-6 py-4">
-              <a href="https://www.qualys.com/training/certification/cloud-agent/" target="_blank" rel="noopener noreferrer" class="text-purple-400 underline hover:text-pink-500">
+              <a href="https://www.qualys.com/training/certification/cloud-agent/" target="_blank"
+                rel="noopener noreferrer" class="text-purple-400 underline hover:text-pink-500">
                 Verify
               </a>
             </td>
@@ -188,10 +224,11 @@
           <tr class="bg-gray-800 hover:bg-gray-700">
             <td class="border border-gray-600 px-6 py-4">Qualys Enterprise TruRisk™ Management (ETM)</td>
             <td class="border border-gray-600 px-6 py-4">
-              <img src="/static/Qualys-Logo.wine.png" alt="Qualys RSBP Badge" class="w-16 mx-auto" />
+              <img src="/Qualys-Logo.wine.png" alt="Qualys RSBP Badge" class="w-16 mx-auto" />
             </td>
             <td class="border border-gray-600 px-6 py-4">
-              <a href="https://www.qualys.com/training/certification/trurisk/" target="_blank" rel="noopener noreferrer" class="text-purple-400 underline hover:text-pink-500">
+              <a href="https://www.qualys.com/training/certification/trurisk/" target="_blank"
+                rel="noopener noreferrer" class="text-purple-400 underline hover:text-pink-500">
                 Verify
               </a>
             </td>
@@ -201,10 +238,11 @@
           <tr class="bg-gray-800 hover:bg-gray-700">
             <td class="border border-gray-600 px-6 py-4">Qualys Scanning Strategies and Best Practices (SSBP)</td>
             <td class="border border-gray-600 px-6 py-4">
-              <img src="/static/Qualys-Logo.wine.png" alt="Qualys RSBP Badge" class="w-16 mx-auto" />
+              <img src="/Qualys-Logo.wine.png" alt="Qualys RSBP Badge" class="w-16 mx-auto" />
             </td>
             <td class="border border-gray-600 px-6 py-4">
-              <a href="https://www.qualys.com/training/certification/ssbp/" target="_blank" rel="noopener noreferrer" class="text-purple-400 underline hover:text-pink-500">
+              <a href="https://www.qualys.com/training/certification/ssbp/" target="_blank"
+                rel="noopener noreferrer" class="text-purple-400 underline hover:text-pink-500">
                 Verify
               </a>
             </td>
@@ -240,18 +278,33 @@
     <section id="tools" class="mb-10">
       <h2 class="text-2xl font-semibold text-purple-400 mb-4">Tools & Technologies</h2>
       <div class="flex flex-wrap gap-3">
-        <button class="bg-purple-600 hover:bg-pink-500 text-white px-4 py-2 rounded-full text-sm transition duration-300 ease-in-out">Python</button>
-        <button class="bg-purple-600 hover:bg-pink-500 text-white px-4 py-2 rounded-full text-sm transition duration-300 ease-in-out">Flask</button>
-        <button class="bg-purple-600 hover:bg-pink-500 text-white px-4 py-2 rounded-full text-sm transition duration-300 ease-in-out">JavaScript</button>
-        <button class="bg-purple-600 hover:bg-pink-500 text-white px-4 py-2 rounded-full text-sm transition duration-300 ease-in-out">Tailwind CSS</button>
-        <button class="bg-purple-600 hover:bg-pink-500 text-white px-4 py-2 rounded-full text-sm transition duration-300 ease-in-out">HTML</button>
-        <button class="bg-purple-600 hover:bg-pink-500 text-white px-4 py-2 rounded-full text-sm transition duration-300 ease-in-out">Git & GitHub</button>
-        <button class="bg-purple-600 hover:bg-pink-500 text-white px-4 py-2 rounded-full text-sm transition duration-300 ease-in-out">Wireshark</button>
-        <button class="bg-purple-600 hover:bg-pink-500 text-white px-4 py-2 rounded-full text-sm transition duration-300 ease-in-out">Nmap</button>
-        <button class="bg-purple-600 hover:bg-pink-500 text-white px-4 py-2 rounded-full text-sm transition duration-300 ease-in-out">Postman</button>
-        <button class="bg-purple-600 hover:bg-pink-500 text-white px-4 py-2 rounded-full text-sm transition duration-300 ease-in-out">VirusTotal</button>
-        <button class="bg-purple-600 hover:bg-pink-500 text-white px-4 py-2 rounded-full text-sm transition duration-300 ease-in-out">Hacker101</button>
-        <button class="bg-purple-600 hover:bg-pink-500 text-white px-4 py-2 rounded-full text-sm transition duration-300 ease-in-out">Burp Suite</button>
+        <button
+          class="bg-purple-600 hover:bg-pink-500 text-white px-4 py-2 rounded-full text-sm transition duration-300 ease-in-out">Python</button>
+        <button
+          class="bg-purple-600 hover:bg-pink-500 text-white px-4 py-2 rounded-full text-sm transition duration-300 ease-in-out">Flask</button>
+        <button
+          class="bg-purple-600 hover:bg-pink-500 text-white px-4 py-2 rounded-full text-sm transition duration-300 ease-in-out">JavaScript</button>
+        <button
+          class="bg-purple-600 hover:bg-pink-500 text-white px-4 py-2 rounded-full text-sm transition duration-300 ease-in-out">Tailwind
+          CSS</button>
+        <button
+          class="bg-purple-600 hover:bg-pink-500 text-white px-4 py-2 rounded-full text-sm transition duration-300 ease-in-out">HTML</button>
+        <button
+          class="bg-purple-600 hover:bg-pink-500 text-white px-4 py-2 rounded-full text-sm transition duration-300 ease-in-out">Git
+          & GitHub</button>
+        <button
+          class="bg-purple-600 hover:bg-pink-500 text-white px-4 py-2 rounded-full text-sm transition duration-300 ease-in-out">Wireshark</button>
+        <button
+          class="bg-purple-600 hover:bg-pink-500 text-white px-4 py-2 rounded-full text-sm transition duration-300 ease-in-out">Nmap</button>
+        <button
+          class="bg-purple-600 hover:bg-pink-500 text-white px-4 py-2 rounded-full text-sm transition duration-300 ease-in-out">Postman</button>
+        <button
+          class="bg-purple-600 hover:bg-pink-500 text-white px-4 py-2 rounded-full text-sm transition duration-300 ease-in-out">VirusTotal</button>
+        <button
+          class="bg-purple-600 hover:bg-pink-500 text-white px-4 py-2 rounded-full text-sm transition duration-300 ease-in-out">Hacker101</button>
+        <button
+          class="bg-purple-600 hover:bg-pink-500 text-white px-4 py-2 rounded-full text-sm transition duration-300 ease-in-out">Burp
+          Suite</button>
       </div>
     </section>
 
@@ -344,6 +397,12 @@
       .flip-card-back a:hover {
         text-decoration: underline;
       }
+
+      /* New CSS for the small chart container */
+      .chart-container-small {
+        max-width: 300px; /* Adjust this value to make the chart smaller or larger */
+        margin: 0 auto; /* Center the container */
+      }
     </style>
 
     <section id="projects">
@@ -355,7 +414,8 @@
             <div class="flip-card-front">
               <div class="project-image-placeholder"></div>
               <h3>SecureLink Analyzer</h3>
-              <img src="/static/Background of cyber security and network protection_ _ Premium Vector.jpeg" alt="secured link Platform Screenshot" class="project-screenshot">
+              <img src="/Background of cyber security and network protection_ _ Premium Vector.jpeg"
+                alt="secured link Platform Screenshot" class="project-screenshot">
             </div>
             <div class="flip-card-back">
               <p>End-to-end cybersecurity tool for phishing detection.</p>
@@ -369,7 +429,7 @@
           <div class="flip-card-inner">
             <div class="flip-card-front">
               <h3>Phishing Email Detection Tool</h3>
-              <img src="/static/11111.png" alt="Phishing Email Detection Tool Screenshot" class="project-front-image">
+              <img src="/11111.png" alt="Phishing Email Detection Tool Screenshot" class="project-front-image">
 
             </div>
             <div class="flip-card-back">
@@ -384,7 +444,9 @@
           <div class="flip-card-inner">
             <div class="flip-card-front">
               <h3>Mini-SIEM - Security Event Tracker</h3>
-              <img src="/static/🛡️ Safeguarding digital truth!__• Enhancing media literacy 📚__• Secure verification tools 🔐__• Transparency & openness 🎈____Public Trust Solutions champions these pillars alongside the public sector to counter digital d.jpeg" alt="Mini-SIEM" class="project-screenshot">
+              <img
+                src="/🛡️ Safeguarding digital truth!__• Enhancing media literacy 📚__• Secure verification tools 🔐__• Transparency & openness 🎈____Public Trust Solutions champions these pillars alongside the public sector to counter digital d.jpeg"
+                alt="Mini-SIEM" class="project-screenshot">
 
             </div>
             <div class="flip-card-back">
@@ -403,7 +465,7 @@
           <div class="flip-card-inner">
             <div class="flip-card-front">
               <h3>OHS Specialist Platform</h3>
-              <img src="/static/construction.png" alt="OHS Specialist Platform Screenshot" class="project-screenshot">
+              <img src="/construction.png" alt="OHS Specialist Platform Screenshot" class="project-screenshot">
             </div>
             <div class="flip-card-back">
               <p>HTML, JavaScript, TypeScript</p>
@@ -417,13 +479,28 @@
           <div class="flip-card-inner">
             <div class="flip-card-front">
               <h3>Recipe Keeper</h3>
-              <img src="/static/_ (15).jpeg" alt="recipe keeper Platform Screenshot" class="project-screenshot">
+              <img src="/_ (15).jpeg" alt="recipe keeper Platform Screenshot" class="project-screenshot">
             </div>
             <div class="flip-card-back">
               <p>Python, Flask, JS, HTML</p>
               <p>Save, search, and manage cooking recipes online.</p>
               <a href="https://recipe-keeper-brem.onrender.com/" target="_blank">🔗 View Live</a>
             </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <h3>Reception 88</h3>
+            <img src="/image copy 2.png" alt="recipe keeper Platform Screenshot" class="project-screenshot">
+          </div>
+          <div class="flip-card-back">
+            <p>Python, Flask, JS, HTML</p>
+            <p>Admin-salon website</p>
+            <a href="https://github.com/sasekaninkuri/Admin-salon/blob/main/Admin_Salon_PWD-1/app.py"
+              target="_blank">🔗 View on github</a>
           </div>
         </div>
       </div>
@@ -447,6 +524,11 @@
             LetsDefend Profile
           </a>
         </li>
+        <li>
+          <a href="https://ctf.hacker101.com/ctf" target="_blank" rel="noopener noreferrer">
+            Hacker101 Profile
+          </a>
+        </li>
       </ul>
     </section>
 
@@ -454,18 +536,21 @@
       <h2 class="text-2xl font-semibold text-purple-400 mb-4">Awards & Recognitions</h2>
       <ul class="list-disc list-inside space-y-2">
         <li>CCST Cybersecurity Certification - Cisco (2025)</li>
-        </ul>
+      </ul>
     </section>
 
     <section id="contact" class="mb-10">
       <h2 class="text-2xl font-semibold text-purple-400 mb-4">Contact Me</h2>
       <form class="space-y-4 max-w-lg" action="#" method="POST">
         <input type="text" name="name" placeholder="Your Name"
-          class="w-full p-3 rounded bg-gray-700 border border-gray-600 focus:outline-none focus:border-pink-500" required />
+          class="w-full p-3 rounded bg-gray-700 border border-gray-600 focus:outline-none focus:border-pink-500"
+          required />
         <input type="email" name="email" placeholder="Your Email"
-          class="w-full p-3 rounded bg-gray-700 border border-gray-600 focus:outline-none focus:border-pink-500" required />
+          class="w-full p-3 rounded bg-gray-700 border border-gray-600 focus:outline-none focus:border-pink-500"
+          required />
         <textarea name="message" rows="4" placeholder="Your Message"
-          class="w-full p-3 rounded bg-gray-700 border border-gray-600 focus:outline-none focus:border-pink-500" required></textarea>
+          class="w-full p-3 rounded bg-gray-700 border border-gray-600 focus:outline-none focus:border-pink-500"
+          required></textarea>
         <button type="submit"
           class="bg-pink-600 hover:bg-pink-700 transition-colors px-6 py-3 rounded font-semibold text-white">Send</button>
       </form>
@@ -491,8 +576,8 @@
 
     <section id="cv" class="mb-10">
       <h2 class="text-2xl font-semibold text-purple-400 mb-4">Curriculum Vitae (CV)</h2>
-      <a href="/Sasekani-Maluleke-CV.pdf" target="_blank"
-        class="text-pink-400 hover:underline">Download my CV (PDF)</a>
+      <a href="/Sasekani-Maluleke-CV.pdf" target="_blank" class="text-pink-400 hover:underline">Download my CV
+        (PDF)</a>
     </section>
   </main>
 
@@ -517,21 +602,12 @@
       document.getElementById('progressBar').style.width = scrollPercent + '%';
     });
 
-    // Dark mode toggle
-    const themeToggleBtn = document.getElementById('theme-toggle');
-    themeToggleBtn.addEventListener('click', () => {
-      document.body.classList.toggle('bg-gray-900');
-      document.body.classList.toggle('bg-gray-100');
-      document.body.classList.toggle('text-gray-100');
-      document.body.classList.toggle('text-gray-900');
-    });
-
-    // Chart.js skill chart
-    const ctx = document.getElementById('skillChart').getContext('2d');
-    const skillChart = new Chart(ctx, {
+    // Chart.js skill chart (Bar Chart)
+    const skillChartCtx = document.getElementById('skillChart').getContext('2d');
+    const skillChart = new Chart(skillChartCtx, {
       type: 'bar',
       data: {
-        labels: ['Python', 'Flask', 'JavaScript', 'Wireshark', 'Nmap', 'html', 'css'],
+        labels: ['Python', 'Flask', 'JavaScript', 'Wireshark', 'Nmap', 'HTML', 'CSS'],
         datasets: [{
           label: 'Skill Level',
           data: [80, 80, 75, 70, 65, 70, 70],
@@ -545,7 +621,21 @@
         scales: {
           y: {
             beginAtZero: true,
-            max: 100
+            max: 100,
+            grid: {
+              color: 'rgba(255, 255, 255, 0.1)'
+            },
+            ticks: {
+              color: 'white'
+            }
+          },
+          x: {
+            grid: {
+              color: 'rgba(255, 255, 255, 0.1)'
+            },
+            ticks: {
+              color: 'white'
+            }
           }
         },
         plugins: {
@@ -557,6 +647,43 @@
         }
       }
     });
+
+    // Chart.js dashboard skill pie chart
+    const dashboardSkillPieCtx = document.getElementById('dashboardSkillPie').getContext('2d');
+    const dashboardSkillPie = new Chart(dashboardSkillPieCtx, {
+      type: 'pie',
+      data: {
+        labels: ['Cybersecurity Skills', 'Full-stack Development Skills', 'Other Technical Skills'],
+        datasets: [{
+          data: [40, 35, 25], // Example data: Adjust based on your actual skill distribution
+          backgroundColor: [
+            '#8B5CF6', // Purple
+            '#EC4899', // Pink
+            '#10B981' // Green
+          ],
+          hoverOffset: 4
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: {
+            position: 'top',
+            labels: {
+              color: 'white'
+            }
+          },
+          tooltip: {
+            callbacks: {
+              label: function (tooltipItem) {
+                return tooltipItem.label + ': ' + tooltipItem.raw + '%';
+              }
+            }
+          }
+        }
+      }
+    });
+
 
     // ScrollReveal animations
     ScrollReveal().reveal('section', {
@@ -571,7 +698,6 @@
 </body>
 
 </html>
-
 
 
 
