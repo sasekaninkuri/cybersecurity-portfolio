@@ -3,73 +3,121 @@
 
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Sasekani Maluleke | Cybersecurity Portfolio</title>
-  <link rel="stylesheet" href="/portfolio.css">
-
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-    integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="/portfolio.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
   <script src="https://unpkg.com/scrollreveal"></script>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 
 <body class="bg-gray-900 text-gray-100 font-sans">
+
   <div id="progressBar" class="fixed top-0 left-0 h-1 bg-purple-500 z-50" style="width: 0%;"></div>
 
-  <header class="bg-gray-800 p-6 shadow-md">
-    <div class="max-w-6xl mx-auto flex items-center space-x-6">
-      <img src="/WhatsApp Image 2024-04-23 at 12.38.14.jpeg" alt="Headshot"
-        class="w-20 h-20 rounded-full border-2 border-purple-500">
-      <div>
-        <h1 class="text-3xl font-bold">Sasekani Maluleke</h1>
-        <p class="text-sm text-purple-400">
-          <span id="typed"></span>
-        </p>
+  <header class="bg-gray-800 shadow-md sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto flex items-center justify-between p-4 md:p-6">
+
+      <!-- Logo / Profile -->
+      <div class="flex items-center space-x-4">
+        <img src="/WhatsApp Image 2024-04-23 at 12.38.14.jpeg" alt="Headshot" class="w-16 h-16 rounded-full border-2 border-purple-500" />
+        <div>
+          <h1 class="text-2xl font-bold text-gray-100">Sasekani Maluleke</h1>
+          <p class="text-sm text-purple-400">
+            <span id="typed"></span>
+          </p>
+        </div>
       </div>
-      <!-- Collapsible Mobile Menu -->
-<div class="collapse bg-dark" id="navbarToggleExternalContent">
-  <div class="p-4 text-center space-y-2">
-    <a href="#about" class="text-purple-300 hover:underline block">About</a>
-    <a href="#experience" class="text-purple-300 hover:underline block">Experience</a>
-    <a href="#education" class="text-purple-300 hover:underline block">Education</a>
-    <a href="#certifications" class="text-purple-300 hover:underline block">Certifications</a>
-    <a href="#skills" class="text-purple-300 hover:underline block">Skills</a>
-    <a href="#tools" class="text-purple-300 hover:underline block">Tools</a>
-    <a href="#projects" class="text-purple-300 hover:underline block">Projects</a>
-    <a href="#hands-on-training" class="text-purple-300 hover:underline block">Training</a>
-    <a href="#awards" class="text-purple-300 hover:underline block">Awards</a>
-    <a href="#contact" class="text-purple-300 hover:underline block">Contact</a>
-    <a href="#cv" class="text-purple-300 hover:underline block">CV</a>
-  </div>
-</div>
 
-<!-- Top Navbar -->
-<nav class="navbar navbar-dark bg-dark">
-  <div class="container-fluid justify-between">
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <!-- Optional brand/logo -->
-    <a class="navbar-brand text-purple-300" href="#">My Portfolio</a>
-  </div>
-</nav>
+      <!-- Mobile menu button -->
+      <button id="menuButton" aria-label="Toggle menu" class="md:hidden text-purple-300 focus:outline-none">
+        <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+          stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
 
-<!-- Desktop Nav (Visible on md+ screens only) -->
-<nav class="hidden md:flex justify-center mt-4 space-x-4 text-purple-300">
-  <a href="#about" class="hover:underline">About</a>
-  <a href="#experience" class="hover:underline">Experience</a>
-  <a href="#education" class="hover:underline">Education</a>
-  <a href="#certifications" class="hover:underline">Certifications</a>
-  <a href="#skills" class="hover:underline">Skills</a>
-  <a href="#tools" class="hover:underline">Tools</a>
-  <a href="#projects" class="hover:underline">Projects</a>
-  <a href="#hands-on-training" class="hover:underline">Training</a>
-  <a href="#awards" class="hover:underline">Awards</a>
-  <a href="#contact" class="hover:underline">Contact</a>
-  <a href="#cv" class="hover:underline">CV</a>
-</nav>
+      <!-- Nav Links -->
+      <nav id="navMenu" class="hidden md:flex space-x-6 text-purple-300 text-sm font-medium">
+        <a href="#about" class="hover:underline">About</a>
+        <a href="#experience" class="hover:underline">Experience</a>
+        <a href="#education" class="hover:underline">Education</a>
+        <a href="#certifications" class="hover:underline">Certifications</a>
+        <a href="#skills" class="hover:underline">Skills</a>
+        <a href="#tools" class="hover:underline">Tools</a>
+        <a href="#projects" class="hover:underline">Projects</a>
+        <a href="#hands-on-training" class="hover:underline">Training</a>
+        <a href="#awards" class="hover:underline">Awards</a>
+        <a href="#contact" class="hover:underline">Contact</a>
+        <a href="#cv" class="hover:underline">CV</a>
+      </nav>
+
+    </div>
+
+    <!-- Mobile menu dropdown -->
+    <div id="mobileMenu" class="md:hidden bg-gray-800 text-purple-300 hidden px-6 pb-4 space-y-2">
+      <a href="#about" class="block hover:underline">About</a>
+      <a href="#experience" class="block hover:underline">Experience</a>
+      <a href="#education" class="block hover:underline">Education</a>
+      <a href="#certifications" class="block hover:underline">Certifications</a>
+      <a href="#skills" class="block hover:underline">Skills</a>
+      <a href="#tools" class="block hover:underline">Tools</a>
+      <a href="#projects" class="block hover:underline">Projects</a>
+      <a href="#hands-on-training" class="block hover:underline">Training</a>
+      <a href="#awards" class="block hover:underline">Awards</a>
+      <a href="#contact" class="block hover:underline">Contact</a>
+      <a href="#cv" class="block hover:underline">CV</a>
+    </div>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-4 py-8 space-y-16">
+    <!-- Your existing page sections here, unchanged -->
+  </main>
+
+  
+  <script>
+    // Mobile menu toggle
+    const menuButton = document.getElementById('menuButton');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    menuButton.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Typed.js for dynamic typed text effect
+    consttyped = new Typed('#typed', {
+      strings: ['Cybersecurity Analyst', 'Full Stack Developer', 'Security Enthusiast'],
+      typeSpeed: 60,
+      backSpeed: 30,
+      loop: true
+    });
+
+    // Scroll progress bar update
+    window.addEventListener('scroll', () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.body.scrollHeight - window.innerHeight;
+      const scrollPercent = (scrollTop / docHeight) * 100;
+      document.getElementById('progressBar').style.width = scrollPercent + '%';
+    });
+
+    // Chart.js skill chart and pie chart initialization
+    // ... (your existing Chart.js code here, unchanged)
+
+    // ScrollReveal animations
+    ScrollReveal().reveal('section', {
+      delay: 150,
+      distance: '30px',
+      origin: 'bottom',
+      interval: 150,
+      easing: 'ease-in-out',
+      cleanup: true
+    });
+  </script>
+</body>
+
+</html>
 
   </header>
   <section id="dashboard" class="mb-16">
@@ -487,6 +535,42 @@
         </div>
       </div>
     </section>
+
+    <section id="projects">
+  <h2>Digital Forencics Projects</h2>
+  <div class="project-grid">
+
+    <!-- Existing project cards -->
+
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <h3>Forensic Evidence Extractor (FEX)</h3>
+          <img src="/Digital Forensics And Malware Analysis.jpeg" alt="Forensic Evidence Extractor Screenshot" class="project-screenshot">
+        </div>
+        <div class="flip-card-back">
+          <p>Automated tool to extract forensic evidence from compromised Linux systems.</p>
+          <a href="https://github.com/sasekaninkuri/-Project-Name-Forensic-Evidence-Extractor-FEX-" target="_blank">📁 View on GitHub</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <h3>Bash Artifact Sweeper (BAS)</h3>
+          <img src="/The Role of Artificial Intelligence in Cyber Security.jpeg" alt="Bash Artifact Sweeper Screenshot" class="project-screenshot">
+        </div>
+        <div class="flip-card-back">
+          <p>Bash script for live-response collection of user activity and persistence artifacts on Linux.</p>
+          <a href="https://github.com/sasekaninkuri/Project-Title-Bash-Artifact-Sweeper-BAS-" target="_blank">📁 View on GitHub</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 
     <section>
       <h3>Full-stack Developer Projects</h3>

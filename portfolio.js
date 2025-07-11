@@ -43,5 +43,27 @@
       }
     }
   });
+document.querySelectorAll('.tab-links a').forEach(tab => {
+  tab.addEventListener('click', e => {
+    e.preventDefault();
+
+    // Remove active from all tabs
+    document.querySelectorAll('.tab-links a').forEach(t => t.classList.remove('active'));
+
+    // Hide all tab contents
+    document.querySelectorAll('.tab-content').forEach(content => content.style.display = 'none');
+
+    // Add active to clicked tab
+    tab.classList.add('active');
+
+    // Show the linked content
+    const targetId = tab.getAttribute('href').substring(1); // remove '#'
+    const targetContent = document.getElementById(targetId);
+    if (targetContent) {
+      targetContent.style.display = 'block';
+    }
+  });
+});
+targetContent.scrollIntoView({ behavior: 'smooth' });
 
 

@@ -18,7 +18,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Fira Code', monospace;
+  /* Ensure Fira Code is available, otherwise fall back to monospace */
+  font-family: 'Fira Code', 'Cascadia Code', 'Consolas', monospace;
 }
 
 body {
@@ -62,14 +63,19 @@ header p {
   font-size: 1rem;
 }
 
-/* Navigation */
+/* Navigation - General styles applied to all navs */
 nav {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1rem;
+  /* Default styles for all navs */
   margin-top: 1rem;
 }
+
+/* Specific styling for the desktop navigation (hidden on mobile) */
+nav.hidden.md\:flex {
+  justify-content: center; /* Adjust as needed for desktop layout */
+  gap: 1rem;
+}
+
+/* Specific styling for navigation links */
 nav a {
   background: transparent;
   color: var(--accent-blue);
@@ -85,6 +91,43 @@ nav a:hover {
   color: var(--bg-dark);
   box-shadow: 0 0 10px var(--accent-green);
 }
+
+/* Bootstrap Navbar Overrides for Mobile (ensure theme consistency) */
+/* This targets the mobile navbar specifically to apply your theme colors */
+.navbar-dark.bg-gray-800 {
+    background-color: var(--bg-card) !important; /* Use your bg-card for the mobile navbar */
+    border-bottom: 1px solid var(--border-color); /* Add a border to match header */
+}
+
+.navbar-toggler {
+    border-color: var(--accent-green) !important; /* Toggler border color */
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%234df5c0' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important; /* Toggler icon color (accent-green) */
+}
+
+.navbar-collapse {
+    background-color: var(--bg-card) !important; /* Background for the collapsed menu */
+    padding: 1rem; /* Add some padding */
+    border-top: 1px solid var(--border-color);
+}
+
+.navbar-collapse .flex.flex-col.text-center.space-y-2 a {
+    color: var(--accent-blue) !important; /* Link color inside collapsed menu */
+    padding: 0.75rem 1rem !important; /* Adjust padding for mobile links */
+    display: block; /* Make links block level for better tapping */
+    margin: 0.25rem 0; /* Add vertical spacing */
+    border: 1px solid var(--accent-green); /* Border for mobile links */
+    border-radius: 5px;
+}
+
+.navbar-collapse .flex.flex-col.text-center.space-y-2 a:hover {
+    background-color: var(--accent-green) !important;
+    color: var(--bg-dark) !important;
+    box-shadow: 0 0 10px var(--accent-green) !important;
+}
+
 
 /* Main Container */
 main {
@@ -397,60 +440,6 @@ label {
   }
 }
 
-/* Certifications section */
-#certifications {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 3rem 1.5rem;
-  background-color: #1a202c; /* Tailwind's gray-900 */
-  color: #fff;
-  border-radius: 0.5rem;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-#certifications table {
-  width: 100%;
-  border-collapse: collapse;
-  border: 1px solid #4a5568;
-}
-#certifications thead tr {
-  background-color: #2d3748;
-}
-#certifications thead th {
-  padding: 0.75rem 1rem;
-  border: 1px solid #4a5568;
-  font-weight: 600;
-  text-align: center;
-  font-size: 1.1rem;
-}
-#certifications tbody tr {
-  background-color: #2d3748;
-  transition: background-color 0.3s ease;
-}
-#certifications tbody tr:hover {
-  background-color: #4c51bf;
-}
-#certifications tbody td {
-  padding: 0.75rem 1rem;
-  border: 1px solid #4a5568;
-  text-align: center;
-  vertical-align: middle;
-  font-size: 1rem;
-}
-#certifications tbody img {
-  width: 64px;
-  height: auto;
-  border-radius: 0.25rem;
-}
-#certifications a {
-  color: #a78bfa;
-  text-decoration: underline;
-  transition: color 0.3s ease;
-}
-#certifications a:hover {
-  color: #f472b6;
-}
-
-/* Responsive: stack table on small screens */
 @media (max-width: 640px) {
   #certifications table,
   #certifications thead,
@@ -461,35 +450,56 @@ label {
     display: block;
     width: 100%;
   }
+  
+  /* Hide the table headers on small screens */
   #certifications thead tr {
     display: none;
   }
+  
+  /* Each table row is now a block with margin and padding */
   #certifications tbody tr {
     margin-bottom: 1.5rem;
     border: 1px solid #4a5568;
     border-radius: 0.5rem;
-    padding: 1rem;
+    padding: 1rem 0.75rem;  /* reduce horizontal padding */
+    box-sizing: border-box;
   }
+  
+  /* Table cells become full-width blocks */
   #certifications tbody td {
-    text-align: right;
-    padding-left: 50%;
-    position: relative;
+    display: flex;          /* use flex for label + content side-by-side */
+    justify-content: space-between; 
+    align-items: center;
+    text-align: left;       /* left-align text for readability */
+    padding: 0.5rem 0.75rem;
     border: none;
     border-bottom: 1px solid #4a5568;
+    font-size: 0.9rem;      /* slightly smaller font */
   }
-  #certifications tbody td::before {
-    content: attr(data-label);
-    position: absolute;
-    left: 1rem;
-    width: 45%;
-    padding-left: 0.5rem;
-    font-weight: 600;
-    text-align: left;
-  }
+  
+  /* Remove bottom border from last cell */
   #certifications tbody td:last-child {
     border-bottom: 0;
   }
+  
+  /* Before pseudo element for label on left side */
+  #certifications tbody td::before {
+    content: attr(data-label);
+    font-weight: 600;
+    color: #a78bfa;
+    flex: 0 0 40%;          /* take 40% width for label */
+    padding-right: 0.5rem;
+    white-space: nowrap;
+  }
+  
+  /* Ensure images inside table scale down nicely */
+  #certifications tbody img {
+    max-width: 48px;        /* smaller images on mobile */
+    height: auto;
+    border-radius: 0.25rem;
+  }
 }
+
 
 /* Connect / Social Links */
 #connect {
@@ -594,56 +604,130 @@ label {
     padding: 0.6rem 1.2rem;
     min-width: auto;
   }
-  nav a {
-    font-size: 0.9rem;
-    padding: 0.4rem 0.8rem;
+  /* Ensure mobile nav links are styled correctly */
+  .navbar-collapse a { /* Targeting links within the collapsed Bootstrap navbar */
+    font-size: 0.9rem !important; /* !important to override Bootstrap if needed */
+    padding: 0.4rem 0.8rem !important;
   }
 }
 
-/* Scrollbar styling for aesthetics */
-body::-webkit-scrollbar {
-  width: 10px;
+
+      :root {
+        --accent-green: #00ffae;
+        --bg-dark: #0a0f1b;
+        --text-light: #d1d5db;
+      }
+
+      #projects {
+        margin-bottom: 3rem;
+      }
+
+      #projects h2 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: var(--accent-green);
+        margin-bottom: 1rem;
+      }
+
+      .project-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.5rem;
+        margin-bottom: 2rem;
+      }
+
+      .flip-card {
+        background-color: transparent;
+        width: 100%;
+        height: 220px;
+        perspective: 1000px;
+      }
+
+      .flip-card-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        transition: transform 0.8s ease;
+        transform-style: preserve-3d;
+      }
+
+      .flip-card:hover .flip-card-inner {
+        transform: rotateY(180deg);
+      }
+
+      .flip-card-front,
+      .flip-card-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        padding: 1.5rem;
+        border-radius: 1rem;
+        backface-visibility: hidden;
+        box-shadow: 0 0 12px rgba(0, 255, 174, 0.2);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background-color: #1f2937;
+        color: var(--accent-green);
+      }
+
+      .flip-card-front h3,
+      .flip-card-back h3 {
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+        font-weight: bold;
+      }
+
+      .flip-card-front p,
+      .flip-card-back p {
+        color: var(--text-light);
+        font-size: 0.95rem;
+      }
+
+      .flip-card-back {
+        transform: rotateY(180deg);
+        background-color: #111827;
+      }
+
+      .flip-card-back a {
+        margin-top: 1rem;
+        color: var(--accent-green);
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+      .flip-card-back a:hover {
+        text-decoration: underline;
+      }
+
+      /* New CSS for the small chart container */
+      .chart-container-small {
+        max-width: 300px; /* Adjust this value to make the chart smaller or larger */
+        margin: 0 auto; /* Center the container */
+      }
+.tab-links {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
 }
-body::-webkit-scrollbar-track {
-  background: var(--bg-dark);
+
+.tab-links a {
+  padding: 0.5rem 1rem;
+  background: var(--bg-card);
+  color: var(--accent-blue);
+  border-radius: 5px;
+  border: 1px solid var(--accent-green);
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
-body::-webkit-scrollbar-thumb {
+
+.tab-links a.active,
+.tab-links a:hover {
   background-color: var(--accent-green);
-  border-radius: 10px;
-  border: 2px solid var(--bg-dark);
+  color: var(--bg-dark);
+  box-shadow: 0 0 10px var(--accent-green);
 }
-/* Optional - Enhances hover, active state for Tailwind links */
-a.nav-link, a.text-purple-300 {
-  transition: color 0.3s ease, text-decoration 0.3s ease;
-}
-
-a.text-purple-300:hover {
-  color: #d8b4fe; /* Lighter purple on hover */
-  text-decoration: underline;
-}
-
-/* Add padding to links inside mobile collapse */
-#navbarToggleExternalContent a {
-  padding: 8px 0;
-  display: block;
-}
-
-/* Mobile background override */
-#navbarToggleExternalContent {
-  background-color: #1f1f1f;
-}
-
-/* Optional: brand title style */
-.navbar-brand {
-  font-size: 1.25rem;
-  font-weight: 600;
-  letter-spacing: 1px;
-}
-
-/* Optional: style toggler button */
-.navbar-toggler {
-  border-color: #9f7aea; /* Purple border */
-}
-
-
-  
