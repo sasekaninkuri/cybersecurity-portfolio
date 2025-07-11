@@ -612,6 +612,38 @@ body::-webkit-scrollbar-thumb {
   border-radius: 10px;
   border: 2px solid var(--bg-dark);
 }
+/* Optional - Enhances hover, active state for Tailwind links */
+a.nav-link, a.text-purple-300 {
+  transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+a.text-purple-300:hover {
+  color: #d8b4fe; /* Lighter purple on hover */
+  text-decoration: underline;
+}
+
+/* Add padding to links inside mobile collapse */
+#navbarToggleExternalContent a {
+  padding: 8px 0;
+  display: block;
+}
+
+/* Mobile background override */
+#navbarToggleExternalContent {
+  background-color: #1f1f1f;
+}
+
+/* Optional: brand title style */
+.navbar-brand {
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+/* Optional: style toggler button */
+.navbar-toggler {
+  border-color: #9f7aea; /* Purple border */
+}
 
 
   
